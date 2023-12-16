@@ -1,6 +1,3 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-
 export default function Home() {
-  return <p>Test your components here!</p>;
+  return <div>Test your components here!</div>;
 }
