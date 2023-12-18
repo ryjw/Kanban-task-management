@@ -1,0 +1,44 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "cockroachdb"
+  url      = env("DATABASE_URL")
+}
+
+model Board {
+  id      String   @id @default(uuid())
+  name    String
+  columns Column[]
+}
+
+model Column {
+  id   String @id @default(uuid())
+  name String
+
+  board   Board  @relation(fields: [boardId], references: [id])
+  boardId String
+  Task    Task[]
+}
+
+model Task {
+  id          String    @id @default(uuid())
+  name        String
+  description String
+  column      Column    @relation(fields: [columnId], references: [id])
+  columnId    String
+  subtasks    Subtask[]
+}
+
+model Subtask {
+  id   String @id @default(uuid())
+  name String
+
+  Task        Task    @relation(fields: [taskId], references: [id])
+  taskId      String
+  isFulfilled Boolean @default(false)
+}
