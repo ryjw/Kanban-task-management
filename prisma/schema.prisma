@@ -29,7 +29,7 @@ model Task {
   id          String    @id @default(uuid())
   name        String
   description String
-  column      Column    @relation(fields: [columnId], references: [id])
+  column      Column    @relation(fields: [columnId], references: [id], onDelete: Cascade)
   columnId    String
   subtasks    Subtask[]
 }
@@ -38,7 +38,7 @@ model Subtask {
   id   String @id @default(uuid())
   name String
 
-  Task        Task    @relation(fields: [taskId], references: [id])
+  Task        Task    @relation(fields: [taskId], references: [id], onDelete: Cascade)
   taskId      String
   isFulfilled Boolean @default(false)
 }
