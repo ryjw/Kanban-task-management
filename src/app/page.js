@@ -1,3 +1,9 @@
+import Button from "../components/Button";
+
 export default function Home() {
-  return <div>Test your components here!</div>;
+  return (
+    <div>
+      <Button content={"+ Create New Board"} variant="secondary" />
+    </div>
+  );
 }
