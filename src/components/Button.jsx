@@ -1,5 +1,9 @@
 import styles from "../partials/_button.module.scss";
 
-export default function Button({ content, variant }) {
-  return <button className={styles[variant]}>{content}</button>;
+export default function Button({ content, variant, fun }) {
+  return (
+    <button onClick={fun} className={styles[variant]}>
+      {content}
+    </button>
+  );
 }

@@ -2,59 +2,58 @@
 
 //colors
 
-$purple-primary: #635FC7;
-$purple-secondary: #A8A4FF;
+$purple-primary: #635fc7;
+$purple-secondary: #a8a4ff;
 $black: #000112;
-$very-dark-grey:#20212C;
-$dark-grey:#2B2C37;
-$lines-dark: #3E3F4E;
-$medium-grey: #828FA3;
-$lines-light: #E4EBFA;
-$light-grey: #F4F7FD;
-$white: #FFFFFF;
-$red-primary: #EA5555;
-$red-secondary: #FF9898;
+$very-dark-grey: #20212c;
+$dark-grey: #2b2c37;
+$lines-dark: #3e3f4e;
+$medium-grey: #828fa3;
+$lines-light: #e4ebfa;
+$light-grey: #f4f7fd;
+$white: #ffffff;
+$red-primary: #ea5555;
+$red-secondary: #ff9898;
 
 //button secondary colors
 
-$button-secondary_idle: #F0EFFA;
-$button-secondary_hover: #D8D7F1;
-
+$button-secondary_idle: #efeff9;
+$button-secondary_hover: #cccbed;
 
 //typogaraphy
-@mixin heading-xl{
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 30px;
+@mixin heading-xl {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
 }
 
-@mixin heading-l{
-    font-weight:bold;
-    font-size: 18px;
-    line-height: 23px;
+@mixin heading-l {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 23px;
 }
-@mixin heading-m{
-    font-weight:bold;
-    font-size: 15px;
-    line-height: 19px;
+@mixin heading-m {
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 19px;
 }
-@mixin heading-s{
-    font-weight:bold;
-    font-size: 12px;
-    line-height: 15px;
-    kerning: 2.4px;
+@mixin heading-s {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  kerning: 2.4px;
 }
 
 @mixin body-l {
-    font-size: 13px;
-    line-height: 23px;
+  font-size: 13px;
+  line-height: 23px;
 }
-@mixin body-m{
-    font-size: 12px;
-    line-height: 15px;
+@mixin body-m {
+  font-size: 12px;
+  line-height: 15px;
 }
 
-
-
-
-
+@mixin modal-button-text {
+  font-weight: bold;
+  font-size: 13px;
+}
