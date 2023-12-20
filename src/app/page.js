@@ -1,5 +1,5 @@
-import Button from "../components/Button";
+import Card from "../components/Card.jsx";
 
 export default function Home() {
-  return <Button content={"Delete"} variant={"modal_delete"} />;
+  return <Card />;
 }
