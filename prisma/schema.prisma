@@ -17,12 +17,11 @@ model Board {
 }
 
 model Column {
-  id   String @id @default(uuid())
-  name String
-
-  board   Board  @relation(fields: [boardId], references: [id])
+  id      String @id @default(uuid())
+  name    String
+  board   Board  @relation(fields: [boardId], references: [id], onDelete: Cascade)
   boardId String
-  Task    Task[]
+  tasks   Task[]
 }
 
 model Task {
@@ -35,10 +34,9 @@ model Task {
 }
 
 model Subtask {
-  id   String @id @default(uuid())
-  name String
-
-  Task        Task    @relation(fields: [taskId], references: [id], onDelete: Cascade)
+  id          String  @id @default(uuid())
+  name        String
+  task        Task    @relation(fields: [taskId], references: [id], onDelete: Cascade)
   taskId      String
   isFulfilled Boolean @default(false)
 }
