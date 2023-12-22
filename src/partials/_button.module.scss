@@ -1,18 +1,20 @@
 @use "./variables" as *;
+@use "./breakpoints" as *;
+
 
 %default-style{
-  @include heading-m;
-  display: flex;
+  @include modal-button-text;
+  display:flex;
   justify-content: center;
   align-items: center;
   background-color: $purple-primary;
   height: 40px;
-  width: 416px;
+  width: 295px; //default width set to mobile modal button size
   border: none;
   border-radius: 24px;
   padding: 0;
   margin: 0;
-  color: white;
+  color: $white;
   user-select: none;
   cursor: pointer;
 
@@ -21,11 +23,16 @@
   }
 }
 
-// buttons for modals
+// Buttons for Modals
 .default{
   @extend %default-style;
-}
 
+//breakpoint changing button size from 295px to 416px
+  @include lg{
+    width: 416px;
+  }
+}
+//Add New Column, Cancel, Add Subtask
 .secondary{
     @extend %default-style;
     color: $purple-primary;
@@ -33,18 +40,23 @@
     &:hover{
       background-color: $button-secondary_hover;
     }
+    @include lg{
+      width: 416px;
+    }
 }
 //delete button
 .danger{
   @extend %default-style;
-  //color:$white;
   background-color: $red-primary;
   &:hover{
     background-color: $red-secondary;
   }
+  @include lg{
+    width: 416px;
+  }
 }
 
-//Board button to add new board and new tasks
+//Create New Board ( not modal ) and Add New Task Button
 .btn-board{
   @extend %default-style;
   width: 174px;
@@ -56,111 +68,10 @@
   }
 }
 
-// .new_board {
-//   @include heading-m;
-//   background-color: $purple-primary;
-//   border: none;
-//   width: 174px;
-//   height: 48px;
-//   border-radius: 24px;
-//   padding: 0;
-//   margin: 0;
-//   color: #ffffff;
-//   user-select: none;
-//   cursor: pointer;
-// }
+//Add New Task button on mobile
+.btn-header_sm{
+  @extend %default-style;
+    width: 48px;
+    height: 32px
+}
 
-// .new_board:hover {
-//   background-color: $purple-secondary;
-// }
-
-// .new_task {
-//   @include heading-m;
-//   background-color: $purple-primary;
-//   border: none;
-//   width: 164px;
-//   height: 48px;
-//   border-radius: 24px;
-//   padding: 0;
-//   margin: 0;
-//   color: white;
-//   user-select: none;
-//   cursor: pointer;
-// }
-
-// .new_task:hover {
-//   background-color: $purple-secondary;
-// }
-
-// .modal_new_board,
-// .modal_save_changes {
-//   @include modal-button-text;
-//   background-color: $purple-primary;
-//   border: none;
-//   width: 416px;
-//   height: 40px;
-//   border-radius: 20px;
-//   padding: 0;
-//   margin: 0;
-//   color: white;
-//   user-select: none;
-//   cursor: pointer;
-// }
-
-// .modal_new_board:hover {
-//   background-color: $purple-secondary;
-// }
-
-// .modal_new_column {
-//   @include modal-button-text;
-//   background-color: $button-secondary_idle;
-//   border: none;
-//   width: 416px;
-//   height: 40px;
-//   border-radius: 20px;
-//   padding: 0;
-//   margin: 0;
-//   color: $purple-primary;
-//   user-select: none;
-//   cursor: pointer;
-// }
-
-// .modal_new_column:hover {
-//   background-color: $button-secondary_hover;
-// }
-
-// .modal_delete {
-//   @include modal-button-text;
-//   background-color: $red-primary;
-//   border: none;
-//   width: 200px;
-//   height: 40px;
-//   border-radius: 20px;
-//   padding: 0;
-//   margin: 0;
-//   color: white;
-//   user-select: none;
-//   cursor: pointer;
-// }
-
-// .modal_delete:hover {
-//   background-color: $red-secondary;
-// }
-
-// .modal_cancel {
-//   @include modal-button-text;
-//   background-color: $button-secondary_idle;
-//   border: none;
-//   width: 200px;
-//   height: 40px;
-//   border-radius: 20px;
-//   padding: 0;
-//   margin: 0;
-//   color: $purple-primary;
-//   user-select: none;
-//   cursor: pointer;
-// }
-
-// .modal_cancel:hover {
-//   background-color: $button-secondary_hover;
-// }
