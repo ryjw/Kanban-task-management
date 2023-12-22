@@ -1,3 +1,5 @@
+import Button from "../components/Button";
+
 export default function Home() {
-  return <div>Test your components here!</div>;
+  return <Button content={"Delete"} variant={"modal_delete"} />;
 }

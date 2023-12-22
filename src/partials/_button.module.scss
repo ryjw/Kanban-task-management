@@ -1,0 +1,110 @@
+@use "./variables" as *;
+
+.new_board {
+  @include heading-m;
+  background-color: $purple-primary;
+  border: none;
+  width: 174px;
+  height: 48px;
+  border-radius: 24px;
+  padding: 0;
+  margin: 0;
+  color: #ffffff;
+  user-select: none;
+  cursor: pointer;
+}
+
+.new_board:hover {
+  background-color: $purple-secondary;
+}
+
+.new_task {
+  @include heading-m;
+  background-color: $purple-primary;
+  border: none;
+  width: 164px;
+  height: 48px;
+  border-radius: 24px;
+  padding: 0;
+  margin: 0;
+  color: white;
+  user-select: none;
+  cursor: pointer;
+}
+
+.new_task:hover {
+  background-color: $purple-secondary;
+}
+
+.modal_new_board,
+.modal_save_changes {
+  @include modal-button-text;
+  background-color: $purple-primary;
+  border: none;
+  width: 416px;
+  height: 40px;
+  border-radius: 20px;
+  padding: 0;
+  margin: 0;
+  color: white;
+  user-select: none;
+  cursor: pointer;
+}
+
+.modal_new_board:hover {
+  background-color: $purple-secondary;
+}
+
+.modal_new_column {
+  @include modal-button-text;
+  background-color: $button-secondary_idle;
+  border: none;
+  width: 416px;
+  height: 40px;
+  border-radius: 20px;
+  padding: 0;
+  margin: 0;
+  color: $purple-primary;
+  user-select: none;
+  cursor: pointer;
+}
+
+.modal_new_column:hover {
+  background-color: $button-secondary_hover;
+}
+
+.modal_delete {
+  @include modal-button-text;
+  background-color: $red-primary;
+  border: none;
+  width: 200px;
+  height: 40px;
+  border-radius: 20px;
+  padding: 0;
+  margin: 0;
+  color: white;
+  user-select: none;
+  cursor: pointer;
+}
+
+.modal_delete:hover {
+  background-color: $red-secondary;
+}
+
+.modal_cancel {
+  @include modal-button-text;
+  background-color: $button-secondary_idle;
+  border: none;
+  width: 200px;
+  height: 40px;
+  border-radius: 20px;
+  padding: 0;
+  margin: 0;
+  color: $purple-primary;
+  user-select: none;
+  cursor: pointer;
+}
+
+.modal_cancel:hover {
+  background-color: $button-secondary_hover;
+}
