@@ -1,4 +1,5 @@
 import Button from "./Button";
+import Select from "./Select";
 
 //test responsive behavior of button on form/ modal
 
@@ -28,6 +29,8 @@ export function Test() {
         <Button content={"Delete"} variant="danger"></Button>
         <Button content={"Cancel"} variant="secondary"></Button>
         <Button content="+" variant="btn-header_sm"></Button>
+
+        <Select />
       </div>
     </div>
   );

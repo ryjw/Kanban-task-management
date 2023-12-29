@@ -1,0 +1,28 @@
+@use "./variables" as *;
+@use "./breakpoints" as *;
+
+.selectBox {
+  @include body-l;
+  padding: 8px 16px;
+  border: 1px solid $medium-grey-25;
+  height: 40px;
+  width: 295px; //default width set to mobile
+  border-radius: 4px;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  &:hover {
+    border-color: $purple-primary;
+  }
+  &:focus {
+    outline: none;
+  }
+
+  &:after {
+    border: 2px solid $purple-primary;
+  }
+
+  @include lg {
+    width: 416px;
+  }
+}
