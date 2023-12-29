@@ -1,7 +1,11 @@
 import prisma from "@/lib/prisma";
 
 export async function GET() {
-  const boards = await prisma.board.findMany();
+  const boards = await prisma.board.findMany({
+    include: {
+      columns: { include: { tasks: { include: { subtasks: true } } } },
+    },
+  });
   return Response.json({ boards });
 }
 
@@ -11,7 +15,7 @@ export async function POST(req) {
     const { name } = data;
     const board = await prisma.board.create({
       data: {
-        name: name,
+        name,
       },
     });
     return Response.json({ success: true, board });
