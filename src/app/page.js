@@ -1,5 +1,5 @@
-import Card from "../components/Card.jsx";
+import Sidebar from "../components/Sidebar.jsx";
 
 export default function Home() {
-  return <Card />;
+  return <Sidebar />;
 }
