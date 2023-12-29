@@ -4,5 +4,5 @@ import { Test } from "@/components/Test.jsx";
 import TextField from "@/components/TextField.jsx";
 
 export default function Home() {
-  return <TextField />;
+  return <TextField variant={"default"} />;
 }
