@@ -16,6 +16,9 @@
   &:focus {
     outline: none;
   }
+  &:invalid {
+    border-color: $red-primary;
+  }
 }
 
 .default {
