@@ -1,0 +1,49 @@
+@use "./variables" as *;
+
+.sidebar {
+  border: $lines-light 2px solid;
+  width: 200px;
+  height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar p {
+  @include body-m;
+  color: $medium-grey;
+  letter-spacing: 2px;
+}
+
+.sidebar button {
+  border: none;
+  //   background-color: $button-secondary_idle;
+  background-color: white;
+  color: $purple-primary;
+  @include body-m;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebarIcon {
+  font-size: 12px;
+  margin-right: 10px;
+}
+
+.sidebarToggle button {
+  //   margin-top: auto;
+  background-color: $light-grey;
+  color: $medium-grey;
+  @include heading-s;
+  width: 200px;
+  height: 40px;
+  border-radius: 20px;
+  margin-left: -20px;
+}
+
+.eyeSlash {
+  color: $medium-grey;
+  margin-right: 10px;
+}
