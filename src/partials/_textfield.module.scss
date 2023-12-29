@@ -1,0 +1,36 @@
+@use "./variables" as *;
+@use "./breakpoints" as *;
+
+%default-style {
+  @include body-l;
+  height: 40px;
+  width: 295px; //default width set to mobile modal, large variant
+  border-radius: 4px;
+  border: 1px solid $medium-grey-25;
+  box-sizing: border-box;
+  padding: 8px 16px;
+  cursor: pointer;
+  &:hover {
+    border-color: $purple-primary;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.default {
+  @extend %default-style;
+
+  @include lg {
+    width: 416px;
+  }
+}
+
+.alt {
+  @extend %default-style;
+  width: 264px;
+
+  @include lg {
+    width: 385px;
+  }
+}
