@@ -53,3 +53,8 @@ $button-secondary_hover: #d8d7f1;
   font-size: 12px;
   line-height: 15px;
 }
+
+@mixin modal-button-text {
+  font-weight: bold;
+  font-size: 13px;
+}
