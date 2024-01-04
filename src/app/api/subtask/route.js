@@ -55,7 +55,7 @@ export async function PUT(req) {
     if (!isSubtaskExisting) {
       return Response.json({ success: false, error: "No such subtask exists" });
     }
-    const subtask = await prisma.task.update({
+    const subtask = await prisma.subtask.update({
       where: { id },
       data: { name, isFulfilled },
     });
