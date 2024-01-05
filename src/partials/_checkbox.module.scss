@@ -1,0 +1,39 @@
+@use "./variables" as *;
+
+  // Hide checkbox visually but remain accessible to screen readers.
+
+.hiddenCheckbox {
+    clip: rect(0, 0, 0, 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  .checkbox {
+    display: inline-block; // inline elements ignore 'height and width' thats why this is in inline-block
+    height: 16px;
+    width: 16px;
+    background-color: $white;
+    border: 2px solid #ddd;
+    border-radius: 2px;
+    margin-right: 16px;
+    cursor: pointer;
+  }
+
+  .checkboxActive {
+    border-color: $purple-primary;
+    background-color: $purple-primary;
+  }
+
+  .checkboxWrapper{
+    width: 296px;
+    height: 40px;
+    background-color: $light-grey;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }

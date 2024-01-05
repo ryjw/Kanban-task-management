@@ -3,10 +3,12 @@ import Button from "@/components/Button.jsx";
 import Card from "../components/Card.jsx";
 import { Test } from "@/components/Test.jsx";
 import TextField from "@/components/TextField.jsx";
+import Checkbox from "@/components/Checkbox.jsx";
 
 export default function Home() {
   return (
     <>
+      <Checkbox />
       <Card />
       <Sidebar />
       <Button content={"+ Create New Board"} variant={"btn-board"} />
