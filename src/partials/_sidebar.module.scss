@@ -18,10 +18,10 @@
 
 .sidebar button {
   border: none;
-  //   background-color: $button-secondary_idle;
   background-color: white;
   color: $purple-primary;
   @include body-m;
+  font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,18 +32,16 @@
   margin-right: 10px;
 }
 
-.sidebarToggle button {
-  //   margin-top: auto;
+.HideSidebar {
   background-color: $light-grey;
   color: $medium-grey;
-  @include heading-s;
-  width: 200px;
-  height: 40px;
+  width: 240px;
+  height: 45px;
   border-radius: 20px;
   margin-left: -20px;
 }
 
-.eyeSlash {
-  color: $medium-grey;
-  margin-right: 10px;
+.OpenEye {
+  margin-top: 10px;
+  height: 45px;
 }

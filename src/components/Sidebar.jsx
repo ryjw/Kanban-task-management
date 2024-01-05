@@ -1,7 +1,8 @@
 import styles from "../partials/_sidebar.module.scss";
-import { FaEyeSlash } from "react-icons/fa6";
-import { BsLayoutTextSidebar } from "react-icons/bs";
 import logo from "../../public/assets/logo.png";
+import shape from "../../public/assets/shape.png";
+import OpenEye from "../../public/assets/OpenEye.png";
+import HideSidebar from "../../public/assets/HideSidebar.png";
 import Image from "next/image";
 
 export default function Sidebar() {
@@ -13,15 +14,16 @@ export default function Sidebar() {
         </h1>
         <p> ALL BOARDS (0)</p>
         <button>
-          <BsLayoutTextSidebar className={styles.sidebarIcon} /> + Create New
-          Board
+          <Image src={shape} className={styles.sidebarIcon} />+ Create New Board
         </button>
       </div>
       <div className={styles.sidebarToggle}>
-        <button>
-          <FaEyeSlash className={styles.eyeSlash} />
-          Hide Sidebar
-        </button>
+        <div className={styles.HideSidebar}>
+          <Image src={HideSidebar} />
+        </div>
+        <div>
+          <Image className={styles.OpenEye} src={OpenEye} />
+        </div>
       </div>
     </div>
   );
