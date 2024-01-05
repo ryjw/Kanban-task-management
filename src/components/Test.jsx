@@ -1,4 +1,5 @@
 import Button from "./Button";
+import Checkbox from "./Checkbox";
 
 //test responsive behavior of button on form/ modal
 
@@ -25,9 +26,11 @@ export function Test() {
           flexWrap: "wrap;",
         }}
       >
-        <Button content={"Delete"} variant="danger"></Button>
+        <Checkbox />
+
+        {/* <Button content={"Delete"} variant="danger"></Button>
         <Button content={"Cancel"} variant="secondary"></Button>
-        <Button content="+" variant="btn-header_sm"></Button>
+        <Button content="+" variant="btn-header_sm"></Button> */}
       </div>
     </div>
   );
