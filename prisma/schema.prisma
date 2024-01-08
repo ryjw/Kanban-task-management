@@ -36,7 +36,7 @@ model Column {
 model Task {
   id          String    @id @default(uuid())
   name        String
-  description String
+  description String?
   column      Column    @relation(fields: [columnId], references: [id], onDelete: Cascade)
   columnId    String
   subtasks    Subtask[]
