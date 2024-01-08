@@ -3,7 +3,7 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { cookies } from "next/headers";
 
-export async function GET(req) {
+export async function POST(req) {
   try {
     const data = await req.json();
     const { username, password } = data;
@@ -33,7 +33,7 @@ export async function GET(req) {
       });
     }
 
-    const token = jwt.sign({ userId: user.id }, process.env.SECRET);
+    const token = jwt.sign({ userId: user.id, username }, process.env.SECRET);
 
     const cookieStore = cookies();
 
