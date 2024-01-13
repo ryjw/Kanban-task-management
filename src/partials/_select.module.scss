@@ -1,0 +1,67 @@
+@use "./variables" as *;
+@use "./breakpoints" as *;
+
+.select {
+  box-sizing: border-box;
+  position: relative;
+  width: 200px;
+  user-select: none;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid $medium-grey-25;
+  height: 40px;
+  width: 295px; //default width set to mobile modal, large variant
+  @include lg {
+    width: 416px;
+  }
+  &:hover {
+    border-color: $purple-primary;
+  }
+}
+
+.select-trigger {
+  @include body-l;
+  position: relative;
+  padding: 8px 16px;
+}
+
+.custom-options {
+  box-sizing: border-box;
+  position: absolute;
+  top: 100%;
+  opacity: 1;
+  background-color: $white;
+  border-radius: 8px;
+  padding: 8px 0;
+  margin-top: 8px;
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+  width: 295px; //default width set to mobile modal, large variant
+  @include lg {
+    width: 416px;
+  }
+}
+
+.open {
+  visibility: visible;
+  pointer-events: all;
+}
+
+.option {
+  @include body-l;
+  color: $medium-grey;
+  padding: 8px 16px;
+}
+
+.arrow {
+  position: absolute;
+  transform: rotate(45deg);
+  height: 7px;
+  width: 7px;
+  border-right: 2px solid $purple-primary;
+  border-bottom: 2px solid $purple-primary;
+  right: 15px;
+  top: 14px;
+}
