@@ -1,0 +1,28 @@
+@use "./variables" as *;
+
+.checkboxWrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: $light-grey;
+  border-radius: 4px;
+  gap: 16px;
+  margin-top: 8px;
+  padding: 12px;
+  cursor: pointer;
+}
+
+input.checkbox[type="checkbox"]{
+  accent-color: $purple-primary;
+  min-height: 16px;
+  min-width: 16px;
+  cursor: pointer;
+
+ &:hover{
+  accent-color: darken($purple-primary, 2%);;
+ }
+}
+
+.subtaskText{
+  @include heading-s
+}
