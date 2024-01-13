@@ -1,5 +1,8 @@
 import styles from "../partials/_subtask.module.scss";
 import TextField from "./TextField";
+import Select from "./Select";
+import Button from "./Button";
+import Textarea from "./Textarea";
 
 export default function ListComponent() {
   return (
@@ -11,10 +14,10 @@ export default function ListComponent() {
       </div>
       <div className={styles.sections}>
         <label className={styles.subTitle}>Description</label>
-        <textarea
-          className={styles.textarea}
+        <Textarea
+          variant="default"
           placeholder="e.g. It's always good to take a break. This 15 minute break will recharge the batteries a little"
-        ></textarea>
+        />
       </div>
       <div className={styles.sections}>
         <label className={styles.subTitle}>Subtasks</label>
@@ -22,13 +25,12 @@ export default function ListComponent() {
           <TextField variant="alt" placeholder="e.g. Drink coffee & smile" />
           <button>X</button>
         </div>
-        <button className={styles.addBtn}>+Add New Subtask</button>
+        <Button variant="secondary" content="+Add New Subtask" />
       </div>
       <div className={styles.sections}>
         <label className={styles.subTitle}>Status</label>
-        <select className={styles.input} type="text" placeholder="Todo" />
-
-        <button className={styles.createBtn}>Create Task</button>
+        <Select />
+        <Button variant="default" content="Create Task" />
       </div>
     </form>
   );
