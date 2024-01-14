@@ -32,7 +32,9 @@ export async function POST(req) {
       },
     });
 
-    const token = jwt.sign({ userId: user.id, username }, process.env.SECRET);
+    const token = jwt.sign({ id: user.id, username }, process.env.SECRET, {
+      expiresIn: "168h",
+    });
 
     const cookieStore = cookies();
     cookieStore.set("auth", token);
