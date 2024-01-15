@@ -1,4 +1,5 @@
 // import Sidebar from "../components/Sidebar.jsx";
+import "./globals.css";
 import Button from "@/components/Button.jsx";
 import Card from "../components/Card.jsx";
 import { Test } from "@/components/Test.jsx";
@@ -8,6 +9,7 @@ import TextField from "@/components/TextField.jsx";
 import Checkbox from "@/components/Checkbox.jsx";
 
 import Subtask from "@/components/Subtask.jsx";
+import DropdownMenu from "@/components/DropdownMenu.jsx";
 
 export default function Home() {
   return (
@@ -26,6 +28,9 @@ export default function Home() {
       <Select />
       <TextField variant={"default"} />;
       <Subtask />
+      <div style={{ marginLeft: "100px" }}>
+        <DropdownMenu />
+      </div>
     </>
   );
 }
