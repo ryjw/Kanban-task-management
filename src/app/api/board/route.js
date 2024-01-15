@@ -1,7 +1,9 @@
 import prisma from "@/lib/prisma";
 
-export async function GET() {
+export async function GET(req) {
   try {
+    const cookie = req.cookies.get("user");
+    const userId = cookie.value;
     const boards = await prisma.board.findMany({
       include: {
         columns: { include: { tasks: { include: { subtasks: true } } } },
