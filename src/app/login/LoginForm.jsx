@@ -1,20 +1,22 @@
 "use client";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
 import TextField from "@/components/TextField";
 import styles from "../../partials/pages/_login.module.scss";
 import Button from "@/components/Button";
-import { set } from "zod";
+
 //TO DO: add type to button
+// add zod
 
 export default function LoginForm() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    reset,
+  } = useForm();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
+  const onSubmit = async (data) => {
     try {
       //submit to server
       const response = await fetch(`/api/user/login`, {
@@ -22,48 +24,44 @@ export default function LoginForm() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          username,
-          password,
-        }),
+        body: JSON.stringify(data),
       });
 
+      console.log(data);
+
       if (response.ok) {
-        const data = await response.json();
-        console.log(data);
+        const responseData = await response.json();
+        console.log("data", responseData);
       }
     } catch (error) {
-      return console.log("loggin failed");
+      console.log(error);
+      return console.log("login failed");
     }
-    setIsSubmitting(false);
-    setUsername("");
-    setPassword("");
+    reset();
   };
 
   return (
-    <form onSubmit={handleSubmit} className={styles.form}>
+    <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
       {" "}
       Login
       <input
+        {...register("username", {
+          required: "username is required",
+        })}
         type="username"
         placeholder="Username"
-        value={username}
-        onChange={(e) => {
-          setUsername(e.target.value);
-        }}
       />
+      {/* //display error// */}
+      {errors.username && <p>{`${errors.username.message}`}</p>}
       <input
+        {...register("password", {
+          required: "password is required",
+        })}
         type="password"
         placeholder="Password"
-        value={password}
-        onChange={(e) => {
-          setPassword(e.target.value);
-        }}
       />
-      <Button
-        content={isSubmitting ? "Loggin in" : "Login"}
-        variant={"default"}
-      />
+      {errors.password && <p>{`${errors.password.message}`}</p>}
+      <Button disabled={isSubmitting} content={"login"} variant={"default"} />
     </form>
   );
 }
