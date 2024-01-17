@@ -35,7 +35,7 @@ export async function POST(req) {
     if (!userId) {
       return Response.json({
         success: false,
-        error: "Please log in to view boards",
+        error: "Please log in to create boards",
       });
     }
     const board = await prisma.board.create({
@@ -67,7 +67,7 @@ export async function PATCH(req) {
     if (!userId) {
       return Response.json({
         success: false,
-        error: "Please log in to view boards",
+        error: "Please log in to edit boards",
       });
     }
     if (userId !== board.userId) {
@@ -108,7 +108,7 @@ export async function DELETE(req) {
     if (!userId) {
       return Response.json({
         success: false,
-        error: "Please log in to view boards",
+        error: "Please log in to delete boards",
       });
     }
     if (isBoardExisting.userId !== userId) {
