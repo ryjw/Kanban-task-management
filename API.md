@@ -32,7 +32,7 @@ fetch("/api/user/register", {
 ### Request:
 
 ```js
-fetch("/api/user/register", {
+fetch("/api/user/login", {
     method: "POST",
     headers: {
     "Content-Type": "application/json",
@@ -56,7 +56,7 @@ fetch("/api/user/register", {
 
 ## GET /api/board
 
-Gets only the boards created by that user
+Gets everything created by that user
 
 ### Request:
 
