@@ -56,6 +56,8 @@ fetch("/api/user/register", {
 
 ## GET /api/board
 
+Gets only the boards created by that user
+
 ### Request:
 
 ```js
@@ -149,5 +151,97 @@ fetch("/api/board");
       ]
     }
   ]
+}
+```
+
+## POST /api/board
+
+To create a new board
+
+### Request:
+
+```js
+fetch("/api/board", {
+    method: "POST".
+      headers: {
+    "Content-Type": "application/json",
+  },
+    body: JSON.stringify({
+    name: "Build a sandcastle",
+  }),
+});
+```
+
+### Response:
+
+```js
+{
+  "success": true,
+  "board": {
+    "id": "d5abc1bd-f900-48fb-bc78-159d4397b6f7",
+    "name": "Build a sandcastle",
+    "userId": "09152012-f0bc-43bc-9f9a-5ca3a5e7c8c0"
+  }
+}
+```
+
+## PATCH /api/board
+
+To change the name of the board
+
+### Request:
+
+```js
+fetch("/api/board", {
+    method: "PATCH".
+      headers: {
+    "Content-Type": "application/json",
+  },
+    body: JSON.stringify({
+    name: "Updated name",
+    id: "6ecb6acc-9c28-4a54-83c8-3e4e6103f9cf" //board ID goes here
+  }),
+});
+```
+
+### Response:
+
+```js
+{
+  "success": true,
+  "board": {
+    "id": "6ecb6acc-9c28-4a54-83c8-3e4e6103f9cf",
+    "name": "Updated name",
+    "userId": "09152012-f0bc-43bc-9f9a-5ca3a5e7c8c0"
+  }
+}
+```
+
+## DELETE /api/board
+
+### Request:
+
+```js
+fetch("/api/board", {
+    method: "DELETE".
+      headers: {
+    "Content-Type": "application/json",
+  },
+    body: JSON.stringify({
+    id: "6ecb6acc-9c28-4a54-83c8-3e4e6103f9cf",
+  }),
+});
+```
+
+### Response:
+
+```js
+{
+  "success": true,
+  "board": {
+    "id": "6ecb6acc-9c28-4a54-83c8-3e4e6103f9cf",
+    "name": "Updated name",
+    "userId": "09152012-f0bc-43bc-9f9a-5ca3a5e7c8c0"
+  }
 }
 ```

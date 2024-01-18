@@ -77,11 +77,11 @@ export async function PATCH(req) {
       });
     }
     if (board) {
-      const newName = await prisma.board.update({
+      const board = await prisma.board.update({
         where: { id },
         data: { name },
       });
-      return Response.json({ success: true, newName });
+      return Response.json({ success: true, board });
     } else {
       return Response.json({
         success: false,
