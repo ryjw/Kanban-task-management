@@ -11,7 +11,7 @@ export async function middleware(req) {
     const authCookie = req.cookies.get("auth");
     const secret = new TextEncoder().encode(process.env.SECRET);
     const { payload } = await jwtVerify(authCookie.value, secret);
-    response.cookies.set("user", payload);
+    response.headers.set("userId", payload.id);
     return response;
   } catch (error) {
     console.log(error.message);

@@ -17,6 +17,19 @@ export async function POST(req) {
         error: "The board you have supplied an id for does not exist",
       });
     }
+    const userId = req.headers.get("userId");
+    if (!userId) {
+      return Response.json({
+        success: false,
+        error: "Please log in to create a column",
+      });
+    }
+    if (userId !== isBoardExisting.userId) {
+      return Response.json({
+        success: false,
+        error: "You are not authorised to create a column for this board",
+      });
+    }
     const column = await prisma.column.create({
       data: {
         name,
@@ -29,7 +42,7 @@ export async function POST(req) {
   }
 }
 
-export async function PUT(req) {
+export async function PATCH(req) {
   try {
     const data = await req.json();
     const { name, id } = data;
@@ -42,6 +55,24 @@ export async function PUT(req) {
     const isColumnExisting = await prisma.column.findUnique({ where: { id } });
     if (!isColumnExisting) {
       return Response.json({ success: false, error: "No such column exists" });
+    }
+    const userId = req.headers.get("userId");
+    if (!userId) {
+      return Response.json({
+        success: false,
+        error: "Please log in to edit this column",
+      });
+    }
+    const board = await prisma.board.findUnique({
+      where: {
+        id: isColumnExisting.boardId,
+      },
+    });
+    if (board.userId !== userId) {
+      return Response.json({
+        success: false,
+        error: "You are not authorised to edit this column",
+      });
     }
     const column = await prisma.column.update({
       where: { id },
@@ -64,17 +95,34 @@ export async function DELETE(req) {
       });
     }
     const isColumnExisting = await prisma.column.findUnique({ where: { id } });
-    if (isColumnExisting) {
-      const column = await prisma.column.delete({
-        where: { id },
-      });
-      return Response.json({ success: true, column });
-    } else {
+    if (!isColumnExisting) {
       return Response.json({
         success: false,
         error: "No such column exists, or is already deleted",
       });
     }
+    const userId = req.headers.get("userId");
+    if (!userId) {
+      return Response.json({
+        success: false,
+        error: "Please log in to delete this column",
+      });
+    }
+    const board = await prisma.board.findUnique({
+      where: {
+        id: isColumnExisting.boardId,
+      },
+    });
+    if (board.userId !== userId) {
+      return Response.json({
+        success: false,
+        error: "You are not authorised to edit this column",
+      });
+    }
+    const column = await prisma.column.delete({
+      where: { id },
+    });
+    return Response.json({ success: true, column });
   } catch (error) {
     return Response.json({ success: false, error: error.message });
   }

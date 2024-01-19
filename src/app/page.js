@@ -1,3 +1,5 @@
+"use client";
+
 // import Sidebar from "../components/Sidebar.jsx";
 import "./globals.css";
 import Button from "@/components/Button.jsx";
@@ -12,6 +14,7 @@ import Subtask from "@/components/Subtask.jsx";
 import DropdownMenu from "@/components/DropdownMenu.jsx";
 
 export default function Home() {
+
   return (
     <>
       <Checkbox />
