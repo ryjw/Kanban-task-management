@@ -431,3 +431,99 @@ fetch("/api/task", {
   }
 }
 ```
+
+## POST /api/subtask
+
+### Request:
+
+```js
+fetch("/api/subtask", {
+    method: "POST".
+      headers: {
+    "Content-Type": "application/json",
+  },
+    body: JSON.stringify({
+      name: "scout for a beach",
+      taskId: "a5119321-c822-4abd-9ffb-d843b0459e38",
+      isFulfilled: false // optional
+    }),
+});
+```
+
+### Response:
+
+```js
+{
+  "success": true,
+  "subtask": {
+    "id": "a2ba064b-f58d-46ea-8679-f0319fe73bc6",
+    "name": "scout for a beach",
+    "taskId": "a5119321-c822-4abd-9ffb-d843b0459e38",
+    "isFulfilled": false
+  }
+}
+```
+
+## PATCH /api/subtask
+
+To change either the name or the fulfiled status of the subtask, or both
+
+### Request:
+
+```js
+fetch("/api/subtask", {
+    method: "PATCH".
+      headers: {
+    "Content-Type": "application/json",
+  },
+    body: JSON.stringify({
+      id: "a2ba064b-f58d-46ea-8679-f0319fe73bc6"
+      name: "bring a bucket for the sand", // optional
+      isFulfilled: true // optional
+    }),
+});
+```
+
+### Response:
+
+```js
+{
+  "success": true,
+  "subtask": {
+    "id": "a2ba064b-f58d-46ea-8679-f0319fe73bc6",
+    "name": "bring a bucket for the sand",
+    "taskId": "a5119321-c822-4abd-9ffb-d843b0459e38",
+    "isFulfilled": true
+  }
+}
+```
+
+## DELETE /api/subtask
+
+### Request:
+
+```js
+fetch("/api/subtask", {
+    method: "DELETE".
+      headers: {
+    "Content-Type": "application/json",
+  },
+    body: JSON.stringify({
+      id: "a2ba064b-f58d-46ea-8679-f0319fe73bc6",
+    }),
+});
+```
+
+### Response:
+
+```js
+{
+  "success": true,
+  "subtask": {
+    "id": "a2ba064b-f58d-46ea-8679-f0319fe73bc6",
+    "name": "bring a bucket for the sand",
+    "taskId": "a5119321-c822-4abd-9ffb-d843b0459e38",
+    "isFulfilled": true
+  }
+}
+```
