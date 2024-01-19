@@ -1,12 +1,12 @@
 "use client";
 import { useState } from "react";
-import { Controller, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import styles from "../../partials/pages/_login.module.scss";
 import Button from "@/components/Button";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { loginSchema } from "@/lib/types";
 import TextField from "@/components/TextField.jsx";
-import { LogoLight } from "../../assets";
+import logo from "../../assets/logo-dark.svg";
 import Image from "next/image";
 
 //TO DO: add type to button
@@ -48,32 +48,50 @@ export default function LoginForm() {
 
   return (
     <>
-      <div>
-        <Image scr={LogoLight} alt="logo" />
-      </div>
-      <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-        {" "}
-        <p>Login</p>
-        <TextField
-          variant={"default"}
-          {...register("username")}
-          type="username"
-          placeholder="Username"
-        />
-        {errors.username && (
-          <span className={styles.error}>{errors.username?.message}</span>
-        )}
-        <TextField
-          variant={"default"}
+      <div className={styles.formContainer}>
+        <Image src={logo} alt="logo" />
+        <span className={styles.heading}>Login</span>
+        <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+          <fieldset className={styles.fieldset}>
+            <TextField
+              variant={"default"}
+              {...register("username")}
+              type="username"
+              placeholder="Username"
+            />
+            {/* <input
+            {...register("username")}
+            type="username"
+            placeholder="Username"
+          /> */}
+            {errors.username?.message && (
+              <span className={styles.error}>{errors.username?.message}</span>
+            )}
+          </fieldset>
+          <fieldset className={styles.fieldset}>
+            <TextField
+              variant={"default"}
+              {...register("password")}
+              type="password"
+              placeholder="Password"
+            />
+            {/* <input
           {...register("password")}
-          type="username"
+          type="password"
           placeholder="Password"
-        />
-        {errors.password && (
-          <span className={styles.error}>{errors.username?.message}</span>
-        )}
-        <Button disabled={isSubmitting} content={"Login"} variant={"default"} />
-      </form>
+        /> */}
+            {errors.password?.message && (
+              <span className={styles.error}>{errors.password?.message}</span>
+            )}
+          </fieldset>
+          <Button
+            disabled={isSubmitting}
+            content={"Login"}
+            variant={"default"}
+          />
+        </form>
+        <span>Don&apos;t have an account? Sign up</span>
+      </div>
     </>
   );
 }
