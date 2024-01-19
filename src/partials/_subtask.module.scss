@@ -8,9 +8,12 @@
   flex-direction: column;
   border-radius: 10px;
   border: 2px solid black;
-  width: 500px;
-  height: 650px;
-  @include sm;
+  width: 343px;
+  height: 659px;
+  @include lg {
+    width: 480px;
+    height: 675px;
+  }
 }
 
 .mainTitle {
