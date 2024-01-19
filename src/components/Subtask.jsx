@@ -21,9 +21,9 @@ export default function ListComponent() {
       </div>
       <div className={styles.sections}>
         <label className={styles.subTitle}>Subtasks</label>
-        <div className={styles.temp}>
+        <div className={styles.subtasks}>
           <TextField variant="alt" placeholder="e.g. Drink coffee & smile" />
-          <button>X</button>
+          <button className={styles.xBtn}>X</button>
         </div>
         <Button variant="secondary" content="+Add New Subtask" />
       </div>

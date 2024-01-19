@@ -10,6 +10,7 @@
   border: 2px solid black;
   width: 500px;
   height: 650px;
+  @include sm;
 }
 
 .mainTitle {
@@ -29,7 +30,16 @@
   margin-bottom: 5px;
 }
 
-.temp {
+.subtasks {
   display: flex;
-  gap: 5px;
+  gap: 10px;
+}
+
+.xBtn {
+  border: none;
+  background-color: $white;
+  color: $medium-grey;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: -15px;
 }
