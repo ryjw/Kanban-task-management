@@ -1,12 +1,17 @@
 "use client";
 import { useState } from "react";
-import { useForm } from "react-hook-form";
-import TextField from "@/components/TextField";
+import { Controller, useForm } from "react-hook-form";
 import styles from "../../partials/pages/_login.module.scss";
 import Button from "@/components/Button";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { loginSchema } from "@/lib/types";
+import TextField from "@/components/TextField.jsx";
+import { LogoLight } from "../../assets";
+import Image from "next/image";
 
 //TO DO: add type to button
-// add zod
+// add loader?
+// use textfield component
 
 export default function LoginForm() {
   const {
@@ -14,7 +19,8 @@ export default function LoginForm() {
     handleSubmit,
     formState: { errors, isSubmitting },
     reset,
-  } = useForm();
+    render,
+  } = useForm({ resolver: zodResolver(loginSchema) });
 
   const onSubmit = async (data) => {
     try {
@@ -41,27 +47,33 @@ export default function LoginForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-      {" "}
-      Login
-      <input
-        {...register("username", {
-          required: "username is required",
-        })}
-        type="username"
-        placeholder="Username"
-      />
-      {/* //display error// */}
-      {errors.username && <p>{`${errors.username.message}`}</p>}
-      <input
-        {...register("password", {
-          required: "password is required",
-        })}
-        type="password"
-        placeholder="Password"
-      />
-      {errors.password && <p>{`${errors.password.message}`}</p>}
-      <Button disabled={isSubmitting} content={"login"} variant={"default"} />
-    </form>
+    <>
+      <div>
+        <Image scr={LogoLight} alt="logo" />
+      </div>
+      <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+        {" "}
+        <p>Login</p>
+        <TextField
+          variant={"default"}
+          {...register("username")}
+          type="username"
+          placeholder="Username"
+        />
+        {errors.username && (
+          <span className={styles.error}>{errors.username?.message}</span>
+        )}
+        <TextField
+          variant={"default"}
+          {...register("password")}
+          type="username"
+          placeholder="Password"
+        />
+        {errors.password && (
+          <span className={styles.error}>{errors.username?.message}</span>
+        )}
+        <Button disabled={isSubmitting} content={"Login"} variant={"default"} />
+      </form>
+    </>
   );
 }
