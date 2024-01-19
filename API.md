@@ -6,16 +6,15 @@
 
 ```js
 fetch("/api/user/register", {
-    method: "POST",
-    headers: {
+  method: "POST",
+  headers: {
     "Content-Type": "application/json",
   },
-    body: JSON.stringify({
-        username: "hara"
-        password: 123
-    }),
-}
-);
+  body: JSON.stringify({
+    username: "hara",
+    password: 123,
+  }),
+});
 ```
 
 ### Response:
@@ -33,16 +32,15 @@ fetch("/api/user/register", {
 
 ```js
 fetch("/api/user/login", {
-    method: "POST",
-    headers: {
+  method: "POST",
+  headers: {
     "Content-Type": "application/json",
   },
-    body: JSON.stringify({
-        username: "hara"
-        password: 123
-    }),
-}
-);
+  body: JSON.stringify({
+    username: "hara",
+    password: 123,
+  }),
+});
 ```
 
 ### Response:
@@ -289,7 +287,7 @@ fetch("/api/column", {
     "Content-Type": "application/json",
   },
     body: JSON.stringify({
-    name: "build turrets"
+    name: "build turrets",
     id: "3a959533-c08c-409c-a0f9-4a259b71ea39",
   }),
 });
@@ -333,6 +331,103 @@ fetch("/api/column", {
     "id": "3a959533-c08c-409c-a0f9-4a259b71ea39",
     "name": "build turrets",
     "boardId": "d5abc1bd-f900-48fb-bc78-159d4397b6f7"
+  }
+}
+```
+
+## POST /api/task
+
+### Request:
+
+```js
+fetch("/api/task", {
+    method: "POST".
+      headers: {
+    "Content-Type": "application/json",
+  },
+    body: JSON.stringify({
+      name: "find a beach",
+      description: "a sandy beach", // optional
+      columnId: "92246bea-dcdd-4200-933d-722b4a70b0a5"
+    }),
+});
+```
+
+### Response:
+
+```js
+{
+  "success": true,
+  "task": {
+    "id": "83d9a353-8f76-4f1a-9e30-934770266d36",
+    "name": "find a beach",
+    "description": "a sandy beach",
+    "columnId": "92246bea-dcdd-4200-933d-722b4a70b0a5"
+  }
+}
+```
+
+## PATCH /api/task
+
+To change either the name, description, or column, or all of these
+
+### Request:
+
+```js
+fetch("/api/task", {
+    method: "PATCH".
+      headers: {
+    "Content-Type": "application/json",
+  },
+    body: JSON.stringify({
+      id: "83d9a353-8f76-4f1a-9e30-934770266d36",
+      name: "dig a moat", //optional
+      description: "with a spade", //optional
+      columnId: "bbdc6bc2-9230-4b5d-a02d-1845d77dc759" //optional
+    }),
+});
+```
+
+### Response:
+
+```js
+{
+  "success": true,
+  "task": {
+    "id": "83d9a353-8f76-4f1a-9e30-934770266d36",
+    "name": "dig a moat",
+    "description": "with a spade",
+    "columnId": "bbdc6bc2-9230-4b5d-a02d-1845d77dc759"
+  }
+}
+```
+
+## DELETE /api/task
+
+### Request:
+
+```js
+fetch("/api/task", {
+    method: "DELETE".
+      headers: {
+    "Content-Type": "application/json",
+  },
+    body: JSON.stringify({
+      id: "83d9a353-8f76-4f1a-9e30-934770266d36"
+    }),
+});
+```
+
+### Response:
+
+```js
+{
+  "success": true,
+  "task": {
+    "id": "83d9a353-8f76-4f1a-9e30-934770266d36",
+    "name": "dig a moat",
+    "description": "with a spade",
+    "columnId": "bbdc6bc2-9230-4b5d-a02d-1845d77dc759"
   }
 }
 ```
