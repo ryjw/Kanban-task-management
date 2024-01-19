@@ -245,3 +245,94 @@ fetch("/api/board", {
   }
 }
 ```
+
+## POST /api/column
+
+### Request:
+
+```js
+fetch("/api/column", {
+    method: "POST".
+      headers: {
+    "Content-Type": "application/json",
+  },
+    body: JSON.stringify({
+    name: "gather materials"
+    boardId: "d5abc1bd-f900-48fb-bc78-159d4397b6f7",
+  }),
+});
+```
+
+### Response:
+
+```js
+{
+  "success": true,
+  "column": {
+    "id": "92246bea-dcdd-4200-933d-722b4a70b0a5",
+    "name": "gather materials",
+    "boardId": "d5abc1bd-f900-48fb-bc78-159d4397b6f7"
+  }
+}
+```
+
+## PATCH /api/column
+
+To change the name
+
+### Request:
+
+```js
+fetch("/api/column", {
+    method: "PATCH".
+      headers: {
+    "Content-Type": "application/json",
+  },
+    body: JSON.stringify({
+    name: "build turrets"
+    id: "3a959533-c08c-409c-a0f9-4a259b71ea39",
+  }),
+});
+```
+
+### Response:
+
+```js
+{
+  "success": true,
+  "column": {
+    "id": "3a959533-c08c-409c-a0f9-4a259b71ea39",
+    "name": "build turrets",
+    "boardId": "d5abc1bd-f900-48fb-bc78-159d4397b6f7"
+  }
+}
+```
+
+## DELETE /api/column
+
+### Request:
+
+```js
+fetch("/api/column", {
+    method: "DELETE".
+      headers: {
+    "Content-Type": "application/json",
+  },
+    body: JSON.stringify({
+    id: "3a959533-c08c-409c-a0f9-4a259b71ea39",
+  }),
+});
+```
+
+### Response:
+
+```js
+{
+  "success": true,
+  "column": {
+    "id": "3a959533-c08c-409c-a0f9-4a259b71ea39",
+    "name": "build turrets",
+    "boardId": "d5abc1bd-f900-48fb-bc78-159d4397b6f7"
+  }
+}
+```
