@@ -1,3 +1,6 @@
+// global CSS
+@use '../partials/variables' as *;
+
 *,
 *::before,
 *::after {
@@ -14,4 +17,10 @@ button,
 textarea,
 select {
   font: inherit;
+}
+
+body {
+  width: 100%;
+  display: flex;
+  background: $light-grey;
 }
