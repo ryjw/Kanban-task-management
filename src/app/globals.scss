@@ -21,6 +21,10 @@ select {
 
 body {
   width: 100%;
+}
+
+main {
   display: flex;
   background: $light-grey;
+  position: relative;
 }

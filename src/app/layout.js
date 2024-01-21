@@ -13,8 +13,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={plus_jakarta_sans.className}>
-        <Sidebar />
-        {children}
+        <main>
+          <Sidebar />
+          {children}
+        </main>
       </body>
     </html>
   );
