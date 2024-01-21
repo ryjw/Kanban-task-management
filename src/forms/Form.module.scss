@@ -6,17 +6,18 @@
 .formContainer {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  width: 343px;
+  width: 300px;
   height: 423px;
   border-radius: 6px;
-  padding: 24px;
-}
+  padding: 20px;
 
-.formGroup {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+  @include md {
+    width: 453px;
+    height: 477px;
+    padding: 30px;
+  }
 }
 
 .form {
@@ -25,13 +26,24 @@
   gap: 16px;
   margin-bottom: 30px;
   align-items: center;
+  width: 100%;
 }
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+// .formGroup:nth-child(2) {
+//   margin-bottom: 20px;
+// }
 
 .heading {
   display: flex;
   width: 100%;
   justify-content: flex-start;
-  margin: 40px 0 20px 50px;
+  margin: 40px auto;
   @include heading-l;
 }
 
@@ -42,4 +54,19 @@
 
 .fieldset {
   border: 0;
+}
+
+.smText {
+  @include heading-m;
+  color: $medium-grey;
+}
+
+.form button {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.link {
+  cursor: pointer;
+  color: $purple-primary;
 }
