@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "../partials/_dropdownmenu.module.scss";
+import styles from "@/partials/_dropdownmenu.module.scss";
 import { FaEllipsisVertical } from "react-icons/fa6";
 
 //TODO: add onclick and functionality

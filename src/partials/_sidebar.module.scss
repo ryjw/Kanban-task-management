@@ -1,9 +1,10 @@
 @use "./variables" as *;
 
 .sidebar {
-  border: $lines-light 2px solid;
-  width: 200px;
+  border: $lines-light 1px solid;
+  width: 300px;
   height: 100vh;
+  background-color: $white;
   padding: 20px;
   display: flex;
   flex-direction: column;

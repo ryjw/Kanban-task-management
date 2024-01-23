@@ -1,4 +1,4 @@
-import styles from "../partials/_subtask.module.scss";
+import styles from "@/partials/_subtask.module.scss";
 import TextField from "./TextField";
 
 export default function ListComponent() {

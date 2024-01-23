@@ -29,7 +29,7 @@ export function Test() {
       <div
         style={{
           display: "flex",
-          flexWrap: "wrap;",
+          flexWrap: "wrap",
         }}
       >
         <Checkbox />
