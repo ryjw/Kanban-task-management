@@ -1,16 +1,14 @@
-@use "./variables" as *;
-@use "./breakpoints" as *;
+@use "@/partials/variables" as *;
+@use "@/partials/breakpoints" as *;
 
-%default-style {
+.default {
   @include body-l;
-  height: 40px;
-  width: 295px; //default width set to mobile modal, large variant
+ height: 40px;
   border-radius: 4px;
   border: 1px solid $medium-grey-25;
   box-sizing: border-box;
   padding: 8px 16px;
-  color: $medium-grey;
-  margin-bottom: 15px;
+  color: $black;
   cursor: pointer;
   &:hover {
     border-color: $purple-primary;
@@ -20,22 +18,5 @@
   }
   &:invalid {
     border-color: $red-primary;
-  }
-}
-
-.default {
-  @extend %default-style;
-
-  @include lg {
-    width: 416px;
-  }
-}
-
-.alt {
-  @extend %default-style;
-  width: 264px;
-
-  @include lg {
-    width: 385px;
   }
 }
