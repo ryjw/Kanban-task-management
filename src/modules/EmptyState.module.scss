@@ -1,0 +1,16 @@
+@use '@/partials/variables' as *;
+
+.wrapper {
+  // background-color: red;
+  flex: 1; // grow to fill the space
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  @include heading-l;
+  margin-bottom: 32px;
+  color: $medium-grey;
+}

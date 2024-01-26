@@ -1,0 +1,30 @@
+// global CSS
+@use '@/partials/variables' as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+body {
+  width: 100%;
+}
+
+main {
+  display: flex;
+  background: $light-grey;
+  position: relative;
+}

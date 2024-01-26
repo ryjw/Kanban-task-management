@@ -1,75 +1,53 @@
-@use "./variables" as *;
-@use "./breakpoints" as *;
+@use './variables' as *;
+@use './breakpoints' as *;
 
 %default-style {
-  @include modal-button-text;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $purple-primary;
-  height: 40px;
-  width: 295px; //default width set to mobile modal button size
-  border: none;
   border-radius: 24px;
-  padding: 0;
+  border: none;
+  padding: 16px;
   margin: 0;
-  color: $white;
   user-select: none;
   cursor: pointer;
+  font-weight: bold;
 
+  &.sm {
+    font-size: 13px;
+  }
+
+  &.lg {
+    font-size: 15px;
+  }
+}
+
+// Default button
+.default {
+  @extend %default-style;
+  background-color: $purple-primary;
+  color: $white;
   &:hover {
     background-color: $purple-secondary;
   }
 }
 
-// Buttons for Modals
-.default {
-  @extend %default-style;
-
-  //breakpoint changing button size from 295px to 416px
-  @include lg {
-    width: 416px;
-  }
-}
-//Add New Column, Cancel, Add Subtask
+// Add New Column, Cancel, Add Subtask
 .secondary {
   @extend %default-style;
-  color: $purple-primary;
   background-color: $button-secondary_idle;
+  color: $purple-primary;
   &:hover {
     background-color: $button-secondary_hover;
   }
-  @include lg {
-    width: 416px;
-  }
 }
-//delete button
+
+// delete button
 .danger {
   @extend %default-style;
   background-color: $red-primary;
+  color: $white;
   &:hover {
     background-color: $red-secondary;
   }
-  @include lg {
-    width: 416px;
-  }
-}
-
-//Create New Board ( not modal ) and Add New Task Button
-.btn-board {
-  @extend %default-style;
-  width: 174px;
-  height: 40px;
-  @include heading-m;
-
-  &:hover {
-    background-color: $purple-secondary;
-  }
-}
-
-//Add New Task button on mobile
-.btn-header_sm {
-  @extend %default-style;
-  width: 48px;
-  height: 32px;
 }

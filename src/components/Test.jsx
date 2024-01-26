@@ -1,5 +1,6 @@
 import Button from "./Button";
 import Checkbox from "./Checkbox";
+import DropdownMenu from "./DropdownMenu";
 
 //test responsive behavior of button on form/ modal
 
@@ -15,7 +16,12 @@ export function Test() {
         borderRadius: "24px",
       }}
     >
-      <h2>Lorem ipsum, dolor exercitationem!</h2>
+      <div style={{ display: "flex" }}>
+        {" "}
+        <h2>Lorem ipsum, dolor exercitationem!</h2>
+        <DropdownMenu />
+      </div>
+
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda,
         fugit!
@@ -23,7 +29,7 @@ export function Test() {
       <div
         style={{
           display: "flex",
-          flexWrap: "wrap;",
+          flexWrap: "wrap",
         }}
       >
         <Checkbox />
