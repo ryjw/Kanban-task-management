@@ -1,4 +1,24 @@
 @use "./variables" as *;
+@use "./breakpoints" as *;
+
+.mainDiv {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  border: 2px solid black;
+  width: 343px;
+  height: 659px;
+  @include lg {
+    width: 480px;
+    height: 675px;
+  }
+}
+
+.mainTitle {
+  @include heading-l;
+  margin: 30px 30px;
+}
 
 .sections {
   display: flex;

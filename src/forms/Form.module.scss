@@ -1,0 +1,72 @@
+@use "@/partials/variables" as *;
+@use "@/partials/breakpoints" as *;
+
+//TODO: reusable form scss module
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 423px;
+  border-radius: 6px;
+  padding: 20px;
+
+  @include md {
+    width: 453px;
+    height: 477px;
+    padding: 30px;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 30px;
+  align-items: center;
+  width: 100%;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+// .formGroup:nth-child(2) {
+//   margin-bottom: 20px;
+// }
+
+.heading {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  margin: 40px auto;
+  @include heading-l;
+}
+
+.error {
+  color: $red-primary;
+  @include body-m;
+}
+
+.fieldset {
+  border: 0;
+}
+
+.smText {
+  @include heading-m;
+  color: $medium-grey;
+}
+
+.form button {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.link {
+  cursor: pointer;
+  color: $purple-primary;
+}
