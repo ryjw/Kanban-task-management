@@ -1,0 +1,32 @@
+@use "../partials/variables" as *;
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 999;
+  width: 100%;
+  position: fixed;
+  padding: 20px 16px;
+}
+
+.boardName {
+  display: flex;
+  align-items: center;
+}
+
+.boardName > p {
+  margin: 0 8px 0 16px;
+  @include heading-l;
+}
+
+.btnMenu {
+  display: flex;
+  align-items: center;
+}
+
+.btnMenu > div:first-child {
+  display: flex;
+  width: 48px;
+  height: 32px;
+}
