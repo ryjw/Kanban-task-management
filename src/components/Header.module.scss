@@ -1,4 +1,5 @@
 @use "../partials/variables" as *;
+@use "../partials/breakpoints" as *;
 
 .header {
   display: flex;
@@ -25,8 +26,29 @@
   align-items: center;
 }
 
-.btnMenu > div:first-child {
-  display: flex;
-  width: 48px;
-  height: 32px;
+@include sm {
+  .logoDesktop {
+    display: none;
+  }
+
+  .btnDesktop {
+    display: none;
+  }
+}
+
+@include md {
+  .header {
+    border-bottom: 1px solid $lines-light;
+  }
+
+  .logoMobile {
+    display: none;
+  }
+
+  .btnMenu .btnMobile {
+    display: flex;
+    width: 48px;
+    height: 32px;
+    display: none;
+  }
 }
