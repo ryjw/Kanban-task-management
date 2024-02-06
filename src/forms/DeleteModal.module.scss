@@ -1,0 +1,40 @@
+@use "@/partials/variables" as *;
+@use "@/partials/breakpoints" as *;
+
+// FIXME: button container wont take up full space when flex-direction: row!
+
+.container {
+  height: 244px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+}
+
+.title {
+  @include heading-l;
+  color: $red-primary;
+}
+
+.content {
+  @include body-l;
+  color: $medium-grey;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@include md {
+  .container {
+    width: 480px;
+    height: auto;
+  }
+
+  // .buttonContainer {
+  //   flex-direction: row;
+  // }
+}
