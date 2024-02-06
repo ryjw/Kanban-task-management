@@ -5,25 +5,41 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 999;
   width: 100%;
+  height: 64px;
   position: fixed;
-  padding: 20px 16px;
 }
 
-.boardName {
+.flex {
   display: flex;
   align-items: center;
 }
 
-.boardName > p {
-  margin: 0 8px 0 16px;
+.headerLeft {
+  height: 100%;
+}
+
+.logoDesktop,
+.logoMobile {
+  margin-left: 1.5em;
+}
+
+.headerRight {
+  justify-content: space-between;
+  flex-grow: 1;
+  margin: 0 1em;
+}
+
+.headerBoardName > p {
   @include heading-l;
+  padding-right: 8px;
 }
 
-.btnMenu {
+.headerSettings .btnMobile {
   display: flex;
-  align-items: center;
+  width: 48px;
+  height: 30px;
+  padding-right: 16px;
 }
 
 @include sm {
@@ -37,18 +53,43 @@
 }
 
 @include md {
-  .header {
-    border-bottom: 1px solid $lines-light;
-  }
-
   .logoMobile {
     display: none;
   }
 
-  .btnMenu .btnMobile {
-    display: flex;
-    width: 48px;
-    height: 32px;
+  .headerSettings .btnMobile {
     display: none;
+  }
+
+  .chevronDown {
+    display: none;
+  }
+
+  .header {
+    border-bottom: 1px solid $lines-light;
+    height: 97px;
+  }
+
+  .headerLeft {
+    min-width: 261px;
+    border-right: 1px solid $lines-light;
+  }
+
+  .headerRight {
+    margin-left: 1.5em;
+  }
+
+  .headerBoardName > p {
+    @include heading-xl;
+  }
+
+  .btnDesktop {
+    padding-right: 32px;
+  }
+}
+
+@include lg {
+  .headerLeft {
+    width: 300px;
   }
 }
