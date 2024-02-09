@@ -24,24 +24,23 @@
   display: flex;
   flex-direction: column;
   margin: 10px 25px;
+  gap: 10px;
 }
 
 .subTitle {
   @include heading-s;
   color: $medium-grey;
-  margin-bottom: 5px;
 }
 
-.subtasks {
-  display: flex;
-  gap: 10px;
-}
+// .subtasks {
+//   display: flex;
+//   // gap: 10px;
+// }
 
 .xBtn {
   border: none;
-  background-color: $white;
   color: $medium-grey;
+  background-color: $light-grey;
   font-size: 24px;
   cursor: pointer;
-  margin-top: -10px;
 }
