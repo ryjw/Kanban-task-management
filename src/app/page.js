@@ -1,15 +1,12 @@
+"use client";
 
-'use client';
-
-import EmptyState from '@/modules/EmptyState';
-
+import EditTask from "@/modals/EditTask";
+import EmptyState from "@/modules/EmptyState";
 
 export default function Home() {
   return (
     <>
-
-      <EmptyState />
-
+      <EditTask />
     </>
   );
 }
