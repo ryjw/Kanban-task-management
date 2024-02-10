@@ -15,7 +15,7 @@ export default function DropdownMenu({ options, variant = "default" }) {
         className={styles["menuTrigger"]}
         onClick={() => setOpen(!open)}
       />
-      {open ? (
+      {open && (
         <ul className={styles[variant]}>
           {options.map((option) => {
             //check if option contain edit or delete word and render classname based on that
@@ -36,7 +36,7 @@ export default function DropdownMenu({ options, variant = "default" }) {
             );
           })}
         </ul>
-      ) : null}
+      )}
     </div>
   );
 }
