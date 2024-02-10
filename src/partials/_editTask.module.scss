@@ -18,12 +18,14 @@
 .mainTitle {
   @include heading-l;
   margin: 30px 30px;
+  font-weight: 700;
 }
 
 .sections {
   display: flex;
   flex-direction: column;
   margin: 10px 25px;
+  gap: 10px;
 }
 
 .subTitle {
@@ -35,13 +37,13 @@
 .subtasks {
   display: flex;
   gap: 10px;
+  font-weight: 700;
 }
 
 .xBtn {
   border: none;
-  background-color: $white;
+  background-color: $light-grey;
   color: $medium-grey;
   font-size: 24px;
   cursor: pointer;
-  margin-top: -10px;
 }

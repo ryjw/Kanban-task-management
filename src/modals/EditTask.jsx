@@ -26,7 +26,7 @@ export default function EditTask() {
       <div className={styles.sections}>
         <label className={styles.subTitle}>Subtasks</label>
         <div className={styles.subtasks}>
-          <TextField variant="alt" placeholder="Define user model" />
+          <TextField variant="default" placeholder="Define user model" />
           <button className={styles.xBtn}>
             <IoCloseSharp />
           </button>
