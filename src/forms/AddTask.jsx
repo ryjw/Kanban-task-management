@@ -22,12 +22,15 @@ export default function AddTask() {
       </div>
       <div className={styles.sections}>
         <label className={styles.subTitle}>Subtasks</label>
-        {/* <div className={styles.subtasks}> */}
-        <TextField variant="default" placeholder="e.g. Drink coffee & smile" />
-        <button className={styles.xBtn}>
-          <IoCloseSharp />
-        </button>
-        {/* </div> */}
+        <div className={styles.subtasks}>
+          <TextField
+            variant="default"
+            placeholder="e.g. Drink coffee & smile"
+          />
+          <button className={styles.xBtn}>
+            <IoCloseSharp />
+          </button>
+        </div>
         <Button variant="secondary"> + Add New Subtask</Button>
       </div>
       <div className={styles.sections}>
