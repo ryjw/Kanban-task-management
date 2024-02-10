@@ -1,0 +1,36 @@
+@use "./variables" as *;
+@use "./breakpoints" as *;
+
+.mainContainer {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  border: 2px solid black;
+  width: 343px;
+  height: 659px;
+  padding: 30px;
+  @include lg {
+    width: 500px;
+    height: 675px;
+  }
+  background-color: white;
+}
+
+.sectionOne {
+  display: flex;
+}
+
+.mainTitle {
+  margin-bottom: 20px;
+}
+
+.description {
+  color: $medium-grey;
+}
+
+.subTitle {
+  margin-top: 20px;
+  font-weight: 700;
+  color: $medium-grey;
+}
