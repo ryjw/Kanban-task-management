@@ -12,17 +12,22 @@
   cursor: pointer;
 }
 
-input.checkbox[type="checkbox"]{
+input.checkbox[type="checkbox"] {
   accent-color: $purple-primary;
   min-height: 16px;
   min-width: 16px;
   cursor: pointer;
 
- &:hover{
-  accent-color: darken($purple-primary, 2%);;
- }
+  &:hover {
+    accent-color: darken($purple-primary, 2%);
+  }
 }
 
-.subtaskText{
-  @include heading-s
+.subtaskText {
+  @include heading-s;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: $medium-grey;
 }

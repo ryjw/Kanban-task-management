@@ -15,7 +15,11 @@ export default function Checkbox() {
           setIsChecked(!isChecked);
         }}
       />
-      <p className={styles.subtaskText}>Settings- Account Page</p>
+      <p
+        className={`${isChecked ? styles.completed : ""} ${styles.subtaskText}`}
+      >
+        Settings- Account Page
+      </p>
     </label>
   );
 }
