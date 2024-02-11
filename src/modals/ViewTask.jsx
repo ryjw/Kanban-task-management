@@ -23,8 +23,8 @@ export default function ViewTask() {
         <Checkbox />
         <Checkbox />
         <Checkbox />
-        <label>Current Status</label>
-        <Select />
+        <p className={styles.subTitle}>Current Status</p>
+        <Select className={styles.selectMenu} />
       </form>
     </div>
   );

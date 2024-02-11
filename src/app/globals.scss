@@ -1,5 +1,5 @@
 // global CSS
-@use '@/partials/variables' as *;
+@use "@/partials/variables" as *;
 
 *,
 *::before,
@@ -27,4 +27,10 @@ main {
   display: flex;
   background: $light-grey;
   position: relative;
+}
+
+ul[role="list"],
+ol[role="list"],
+li {
+  list-style: none;
 }
