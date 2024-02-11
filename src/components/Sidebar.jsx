@@ -1,4 +1,4 @@
-import styles from '@/partials/_sidebar.module.scss';
+import styles from "./Sidebar.module.scss";
 
 export default function Sidebar() {
   return (
