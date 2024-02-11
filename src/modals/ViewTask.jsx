@@ -20,9 +20,14 @@ export default function ViewTask() {
           subtasks until we have a coherent proposition.
         </p>
         <p className={styles.subTitle}>Subtasks (2 of 3)</p>
-        <Checkbox />
-        <Checkbox />
-        <Checkbox />
+        <Checkbox> Research competitor pricing and business models </Checkbox>
+        <Checkbox>
+          Outline a business model that works for our solution
+        </Checkbox>
+        <Checkbox>
+          Talk to potential customers about our proposed solution and ask for
+          fair price expectancy
+        </Checkbox>
         <p className={styles.subTitle}>Current Status</p>
         <Select className={styles.selectMenu} />
       </form>
