@@ -18,6 +18,12 @@ export default function Sidebar() {
         columns: [],
       },
       {
+        id: "6ecb6acc-8c28-4a54-83c8-3e4e6103f9cf",
+        name: "running",
+        userId: "09152012-f0bc-43bc-9f9a-5ca3a5e7c8c0",
+        columns: [],
+      },
+      {
         id: "d6504a98-953a-48fb-a3e2-9475ee553ce7",
         name: "programming",
         userId: "09152012-f0bc-43bc-9f9a-5ca3a5e7c8c0",

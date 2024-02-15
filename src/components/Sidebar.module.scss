@@ -21,6 +21,12 @@
   user-select: none;
 }
 
+.boardIcon {
+  width: 16px;
+  height: 16px;
+  margin-left: 32px;
+}
+
 .boardList {
   @include heading-m;
   color: $medium-grey;
@@ -41,17 +47,15 @@
     background: $button-secondary_idle;
     color: $purple-primary;
   }
+  &:hover .boardIcon {
+    filter: invert(40%) sepia(44%) saturate(873%) hue-rotate(203deg)
+      brightness(90%) contrast(87%);
+  }
 }
 
 .newBoard {
   @include heading-m;
   color: $purple-primary;
-}
-
-.boardIcon {
-  width: 16px;
-  height: 16px;
-  margin-left: 32px;
 }
 
 .listSelected {
