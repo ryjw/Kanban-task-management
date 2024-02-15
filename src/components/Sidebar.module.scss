@@ -81,6 +81,33 @@
   filter: brightness(0) invert(1);
 }
 
+.sidebarReplacement {
+  width: 0px;
+  height: 100vh;
+}
+
+.showSidebar {
+  /* Rectangle */
+
+  position: absolute;
+  width: 56px;
+  height: 48px;
+  left: 0px;
+  bottom: 32px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Main Purple */
+  background: #635fc7;
+  border-radius: 0px 100px 100px 0px;
+}
+
+.showSidebarIcon {
+  height: 10.22px;
+  width: 16px;
+}
+
 @include lg {
   .sidebar {
     display: flex;
