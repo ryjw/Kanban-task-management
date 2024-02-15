@@ -1,7 +1,7 @@
 @use "@/partials/variables" as *;
 @use "@/partials/breakpoints" as *;
 
-.sidebar {
+.outerSidebar {
   border: $lines-light 1px solid;
   height: 100vh;
   background-color: $white;
@@ -10,6 +10,9 @@
   flex-direction: column;
   justify-content: space-between;
 }
+
+// .innerSidebar {
+// }
 
 .subheading {
   @include heading-s;
@@ -29,39 +32,3 @@
     min-width: 261px;
   }
 }
-
-// .sidebar p {
-//   @include body-m;
-//   color: $medium-grey;
-//   letter-spacing: 2px;
-// }
-
-// .sidebar button {
-//   border: none;
-//   background-color: white;
-//   color: $purple-primary;
-//   @include body-m;
-//   font-weight: 600;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-// }
-
-// .sidebarIcon {
-//   font-size: 12px;
-//   margin-right: 10px;
-// }
-
-// .HideSidebar {
-//   background-color: $light-grey;
-//   color: $medium-grey;
-//   width: 240px;
-//   height: 45px;
-//   border-radius: 20px;
-//   margin-left: -20px;
-// }
-
-// .OpenEye {
-//   margin-top: 10px;
-//   height: 45px;
-// }
