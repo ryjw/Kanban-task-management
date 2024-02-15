@@ -2,9 +2,11 @@
 import { useState, useEffect } from "react";
 import styles from "./Sidebar.module.scss";
 import iconBoard from "@/assets/icon-board-split.svg";
+import iconHideSidebar from "@/assets/icon-hide-sidebar.svg";
 import Image from "next/image";
 
 export default function Sidebar() {
+  const [sidebarVisible, setSidebarVisible] = useState(true);
   const [currentBoard, setCurrentBoard] = useState({});
   const [boards, setboards] = useState({
     boards: [
@@ -99,7 +101,11 @@ export default function Sidebar() {
   }, []);
 
   return (
-    <div className={styles.outerSidebar}>
+    <div
+      className={`${styles.sidebar} ${
+        sidebarVisible ? styles.visible : styles.hidden
+      }`}
+    >
       <ul>
         <h2 className={styles.subheading}>
           ALL BOARDS {`(${boards.boards.length})`}
@@ -136,6 +142,19 @@ export default function Sidebar() {
           <div className={styles.newBoard}>+ Create New Board</div>
         </li>
       </ul>
+      <div
+        onClick={() => {
+          setSidebarVisible(false);
+        }}
+        className={styles.hideSidebar}
+      >
+        <Image
+          src={iconHideSidebar}
+          alt="hide sidebar icon"
+          className={styles.hideSidebarIcon}
+        />
+        <div>Hide Sidebar</div>
+      </div>
     </div>
   );
 }

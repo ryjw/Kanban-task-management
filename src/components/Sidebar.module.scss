@@ -1,18 +1,14 @@
 @use "@/partials/variables" as *;
 @use "@/partials/breakpoints" as *;
 
-.outerSidebar {
+.sidebar {
   border: $lines-light 1px solid;
   height: 100vh;
   background-color: $white;
-  margin-top: 96px;
+  padding-top: 96px;
   display: none;
   flex-direction: column;
   justify-content: space-between;
-}
-
-.innerSidebar {
-  margin-bottom: 32px;
 }
 
 .subheading {
@@ -64,21 +60,45 @@
   background: $purple-primary;
 }
 
+.hideSidebar {
+  @include heading-m;
+  color: $medium-grey;
+  display: flex;
+  gap: 15px;
+  margin-bottom: 45px;
+  margin-left: 32px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.hideSidebarIcon {
+  height: 16px;
+  width: 18px;
+}
+
 .selectedIcon {
   margin-left: 32px;
   filter: brightness(0) invert(1);
 }
 
 @include lg {
-  .outerSidebar {
+  .sidebar {
     display: flex;
     width: 300px;
   }
 }
 
 @include md {
-  .outerSidebar {
+  .sidebar {
     display: flex;
     min-width: 261px;
   }
+}
+
+.hidden {
+  display: none;
+}
+
+.visibile {
+  display: flex;
 }
