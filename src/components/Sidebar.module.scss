@@ -11,12 +11,40 @@
   justify-content: space-between;
 }
 
-// .innerSidebar {
-// }
+.innerSidebar {
+  margin-top: 16px;
+  margin-bottom: 32px;
+  padding-left: 32px;
+}
 
 .subheading {
   @include heading-s;
+  letter-spacing: 2.4px;
   color: $medium-grey;
+}
+
+.sidebarButton {
+  cursor: pointer;
+}
+
+.newBoard {
+  @include heading-m;
+  color: $purple-primary;
+}
+
+.boardList {
+  @include heading-m;
+  color: $medium-grey;
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  padding: 15px 0;
+  cursor: pointer;
+}
+
+.boardIcon {
+  width: 16px;
+  height: 16px;
 }
 
 @include lg {
