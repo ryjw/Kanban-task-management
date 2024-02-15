@@ -133,14 +133,22 @@ export default function Sidebar() {
                   }}
                   className={styles.boardList}
                 >
-                  <Image src={iconBoard} alt="board icon" />
+                  <Image
+                    src={iconBoard}
+                    alt="board icon"
+                    className={styles.boardIcon}
+                  />
                   <div>{board.name}</div>
                 </li>
               );
             }
           })}
           <li className={styles.boardList}>
-            <Image src={iconBoard} alt="board icon" />
+            <Image
+              src={iconBoard}
+              alt="board icon"
+              className={styles.boardIcon}
+            />
             <div className={styles.newBoard}>+ Create New Board</div>
           </li>
         </ul>
