@@ -12,24 +12,16 @@
 }
 
 .innerSidebar {
-  margin-top: 16px;
   margin-bottom: 32px;
-  padding-left: 32px;
 }
 
 .subheading {
   @include heading-s;
   letter-spacing: 2.4px;
   color: $medium-grey;
-}
-
-.sidebarButton {
-  cursor: pointer;
-}
-
-.newBoard {
-  @include heading-m;
-  color: $purple-primary;
+  margin-bottom: 15px;
+  margin-top: 16px;
+  margin-left: 32px;
 }
 
 .boardList {
@@ -39,12 +31,42 @@
   align-items: center;
   gap: 17px;
   padding: 15px 0;
+  margin-left: 32px;
   cursor: pointer;
+  user-select: none;
+}
+
+.newBoard {
+  @include heading-m;
+  color: $purple-primary;
 }
 
 .boardIcon {
   width: 16px;
   height: 16px;
+}
+
+.listSelected {
+  @include heading-m;
+  color: $white;
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  padding: 15px 0;
+  cursor: pointer;
+  user-select: none;
+  left: 0%;
+  right: 0%;
+  top: 3.86%;
+  width: 92.5%;
+  bottom: 90.68%;
+  border-radius: 0px 100px 100px 0px;
+  background: $purple-primary;
+}
+
+.selectedIcon {
+  margin-left: 32px;
+  filter: brightness(0) invert(1);
 }
 
 @include lg {
