@@ -20,14 +20,14 @@
 }
 
 @include lg {
-  .sidebar {
+  .outerSidebar {
     display: flex;
     width: 300px;
   }
 }
 
 @include md {
-  .sidebar {
+  .outerSidebar {
     display: flex;
     min-width: 261px;
   }
