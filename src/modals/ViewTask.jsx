@@ -12,7 +12,7 @@ export default function ViewTask() {
             Research pricing points of various competitors and trail different
             business models
           </h1>
-          <DropdownMenu />
+          <DropdownMenu options={["Edit Task", "Delete Task"]} />
         </div>
         <p className={styles.description}>
           We know what we're planning to build for version one. Now we need to
