@@ -1,0 +1,163 @@
+@use "@/partials/variables" as *;
+@use "@/partials/breakpoints" as *;
+
+.sidebar {
+  border: $lines-light 1px solid;
+  height: 100vh;
+  background-color: $white;
+  padding-top: 96px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.subheading {
+  @include heading-s;
+  letter-spacing: 2.4px;
+  color: $medium-grey;
+  margin-bottom: 15px;
+  margin-top: 16px;
+  margin-left: 32px;
+  user-select: none;
+}
+
+.boardIcon {
+  width: 16px;
+  height: 16px;
+  margin-left: 32px;
+}
+
+.boardList {
+  @include heading-m;
+  color: $medium-grey;
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  padding: 15px 0;
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    left: 0%;
+    right: 0%;
+    top: 3.86%;
+    width: 92.5%;
+    bottom: 90.68%;
+    border-radius: 0px 100px 100px 0px;
+    background: $button-secondary_idle;
+    color: $purple-primary;
+  }
+  &:hover .boardIcon {
+    filter: invert(40%) sepia(44%) saturate(873%) hue-rotate(203deg)
+      brightness(90%) contrast(87%);
+  }
+}
+
+.newBoard {
+  @include heading-m;
+  color: $purple-primary;
+}
+
+.listSelected {
+  @include heading-m;
+  color: $white;
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  padding: 15px 0;
+  cursor: pointer;
+  user-select: none;
+  left: 0%;
+  right: 0%;
+  top: 3.86%;
+  width: 92.5%;
+  bottom: 90.68%;
+  border-radius: 0px 100px 100px 0px;
+  background: $purple-primary;
+}
+
+.hideSidebar {
+  @include heading-m;
+  color: $medium-grey;
+  display: flex;
+  gap: 15px;
+  margin-bottom: 45px;
+  padding: 15px 0;
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    left: 0%;
+    right: 0%;
+    top: 3.86%;
+    width: 92.5%;
+    bottom: 90.68%;
+    border-radius: 0px 100px 100px 0px;
+    background: $button-secondary_idle;
+    color: $purple-primary;
+  }
+}
+
+.hideSidebarIcon {
+  height: 16px;
+  width: 18px;
+  margin-left: 32px;
+}
+
+.selectedIcon {
+  margin-left: 32px;
+  filter: brightness(0) invert(1);
+}
+
+.sidebarReplacement {
+  width: 0px;
+  height: 100vh;
+}
+
+.showSidebar {
+  /* Rectangle */
+
+  position: absolute;
+  width: 56px;
+  height: 48px;
+  left: 0px;
+  bottom: 32px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Main Purple */
+  background-color: $purple-primary;
+  border-radius: 0px 100px 100px 0px;
+
+  &:hover {
+    background-color: $purple-secondary;
+  }
+}
+
+.showSidebarIcon {
+  height: 10.22px;
+  width: 16px;
+}
+
+@include lg {
+  .sidebar {
+    display: flex;
+    width: 300px;
+  }
+}
+
+@include md {
+  .sidebar {
+    display: flex;
+    min-width: 261px;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.visibile {
+  display: flex;
+}
