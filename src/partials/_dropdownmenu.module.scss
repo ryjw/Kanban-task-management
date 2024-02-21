@@ -1,37 +1,50 @@
-@use "./variables" as *;
+@use "@/partials/variables" as *;
 
-.icon{
-    color: $medium-grey;
-    cursor: pointer;
-    position: relative;
+%default-dropdown {
+  @include body-l;
+  width: 192px;
+  margin-top: 21px;
+  border-radius: 8px;
+  background-color: white;
+  display: inline-block;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  cursor: pointer;
+  position: absolute;
+  box-shadow: -5px 5px 10px #d2d0d3;
+  z-index: 2;
 }
 
-.menuText{
-    @include body-l;
-    width: 192px;
-    height: 94px;
-    border-radius: 8px;
-    background-color: white;
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    cursor:pointer;
-    position: relative;
-    left: -96px;
-    box-shadow: -5px 5px 10px #d2d0d3;
+.menuTrigger {
+  color: $medium-grey;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+}
+//used in modals. ul positioned center of dropdown button
+.default {
+  @extend %default-dropdown;
+  transform: translateX(-50%);
 }
 
-.edit{
-    color: $medium-grey;
-    &:hover{
-        color: $black;
-    }
+//VARIANT: ul positioned left of dropdown button
+.header {
+  @extend %default-dropdown;
+  transform: translateX(-95%);
 }
 
-.delete{
-    color:$red-primary;
-    &:hover{
-        color: $red-secondary;
-    }
+li.edit {
+  color: $medium-grey;
+  &:hover {
+    color: $black;
+  }
+}
+
+li.delete {
+  color: $red-primary;
+  &:hover {
+    color: darken($red-secondary, 30%);
+  }
 }

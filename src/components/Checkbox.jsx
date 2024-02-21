@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import styles from "@/partials/_checkbox.module.scss";
 
-export default function Checkbox() {
+export default function Checkbox({ children }) {
   const [isChecked, setIsChecked] = useState(false);
 
   return (
@@ -15,7 +15,11 @@ export default function Checkbox() {
           setIsChecked(!isChecked);
         }}
       />
-      <p className={styles.subtaskText}>Settings- Account Page</p>
+      <p
+        className={`${isChecked ? styles.completed : ""} ${styles.subtaskText}`}
+      >
+        {children}
+      </p>
     </label>
   );
 }

@@ -1,0 +1,96 @@
+@use "../partials/variables" as *;
+@use "../partials/breakpoints" as *;
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 64px;
+  position: fixed;
+  background-color: white;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.headerLeft {
+  height: 100%;
+}
+
+.logoDesktop,
+.logoMobile {
+  margin-left: 1.5em;
+}
+
+.headerRight {
+  justify-content: space-between;
+  flex-grow: 1;
+  margin: 0 1em;
+}
+
+.headerBoardName > p {
+  @include heading-l;
+  padding-right: 8px;
+}
+
+.headerSettings .btnMobile {
+  display: flex;
+  width: 48px;
+  height: 30px;
+  padding-right: 16px;
+}
+
+@include sm {
+  .logoDesktop {
+    display: none;
+  }
+
+  .btnDesktop {
+    display: none;
+  }
+}
+
+@include md {
+  .logoMobile {
+    display: none;
+  }
+
+  .headerSettings .btnMobile {
+    display: none;
+  }
+
+  .chevronDown {
+    display: none;
+  }
+
+  .header {
+    border-bottom: 1px solid $lines-light;
+    height: 97px;
+  }
+
+  .headerLeft {
+    min-width: 261px;
+    border-right: 1px solid $lines-light;
+  }
+
+  .headerRight {
+    margin-left: 1.5em;
+  }
+
+  .headerBoardName > p {
+    @include heading-xl;
+  }
+
+  .btnDesktop {
+    padding-right: 32px;
+  }
+}
+
+@include lg {
+  .headerLeft {
+    width: 300px;
+  }
+}
