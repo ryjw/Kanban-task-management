@@ -1,12 +1,12 @@
 "use client";
 
-import EditTask from "@/modals/EditTask";
 import EmptyState from "@/modules/EmptyState";
+import ViewTask from "@/modals/ViewTask";
 
 export default function Home() {
   return (
     <>
-      <EditTask />
+      <ViewTask />
     </>
   );
 }
