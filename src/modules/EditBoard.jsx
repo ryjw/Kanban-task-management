@@ -3,6 +3,7 @@ import styles from "@/modules/EditBoard.module.scss";
 import { useState, useEffect } from "react";
 
 export default function EditBoard() {
+  const [newColumns, setNewColumns] = useState([]);
   const [editBoard, setEditBoard] = useState({
     id: "d6504a98-953a-48fb-a3e2-9475ee553ce7",
     name: "programming",
@@ -157,11 +158,22 @@ export default function EditBoard() {
     setEditBoard(currentBoard);
   }, []);
 
-  function handleSubmit() {}
+  function handleSubmit() {
+    if (currentBoard.name !== editBoard.name) {
+      handleBoardNameChange();
+    }
+    for (let i = 0; i < editBoard.columns.length; i++) {
+      if (editBoard.column[i].name !== currentBoard.column[i].name) {
+        handleColumnNameChange(currentBoard.column[i].id, i);
+      }
+    }
+  }
 
-  function handleNameChanges() {}
+  function handleBoardNameChange() {}
 
-  function handleNewColumns() {}
+  function handleColumnNameChange(id, index) {}
+
+  function handleNewColumn() {}
 
   return (
     <div className={styles.outerDiv}>
@@ -185,6 +197,7 @@ export default function EditBoard() {
           />
         );
       })}
+      <button onClick={handleSubmit}>Submit</button>
     </div>
   );
 }
