@@ -1,15 +1,11 @@
+"use client";
 
-'use client';
-
-import EmptyState from '@/modules/EmptyState';
-
+import EditBoard from "@/modules/EditBoard";
 
 export default function Home() {
   return (
     <>
-
-      <EmptyState />
-
+      <EditBoard />
     </>
   );
 }
