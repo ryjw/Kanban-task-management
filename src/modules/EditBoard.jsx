@@ -158,22 +158,36 @@ export default function EditBoard() {
     setEditBoard(currentBoard);
   }, []);
 
+  function addColumn() {}
+
   function handleSubmit() {
     if (currentBoard.name !== editBoard.name) {
       handleBoardNameChange();
     }
-    for (let i = 0; i < editBoard.columns.length; i++) {
-      if (editBoard.column[i].name !== currentBoard.column[i].name) {
-        handleColumnNameChange(currentBoard.column[i].id, i);
+    newColumns.map((name) => {
+      return handleNewColumn(name);
+    });
+    currentBoard.columns.map((column) => {
+      const updatedColumn = editBoard.colums.filter(
+        (col) => col.id === column.id
+      );
+      if (updatedColumn.length > 0) {
+        if (updatedColumn.name !== column.name) {
+          handleColumnNameChange(updatedColumn.id, updatedColumn.name);
+        }
+      } else {
+        handleDeleteColumn(column.id);
       }
-    }
+    });
   }
 
   function handleBoardNameChange() {}
 
-  function handleColumnNameChange(id, index) {}
+  function handleColumnNameChange(id, name) {}
 
-  function handleNewColumn() {}
+  function handleNewColumn(name) {}
+
+  function handleDeleteColumn(id) {}
 
   return (
     <div className={styles.outerDiv}>
