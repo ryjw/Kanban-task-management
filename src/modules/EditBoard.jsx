@@ -3,7 +3,7 @@ import styles from "@/modules/EditBoard.module.scss";
 import { useState, useEffect } from "react";
 
 export default function EditBoard() {
-  const [newColumns, setNewColumns] = useState([]);
+  const [newColumns, setNewColumns] = useState(["test1", "test2"]);
   const [editBoard, setEditBoard] = useState({
     id: "d6504a98-953a-48fb-a3e2-9475ee553ce7",
     name: "programming",
@@ -158,7 +158,7 @@ export default function EditBoard() {
     setEditBoard(currentBoard);
   }, []);
 
-  function addColumn() {}
+  function addColumn(name) {}
 
   function handleSubmit() {
     if (currentBoard.name !== editBoard.name) {
@@ -168,7 +168,7 @@ export default function EditBoard() {
       return handleNewColumn(name);
     });
     currentBoard.columns.map((column) => {
-      const updatedColumn = editBoard.colums.filter(
+      const updatedColumn = editBoard.columns.filter(
         (col) => col.id === column.id
       );
       if (updatedColumn.length > 0) {
@@ -181,13 +181,56 @@ export default function EditBoard() {
     });
   }
 
-  function handleBoardNameChange() {}
+  async function handleBoardNameChange() {
+    await fetch("/api/board", {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: editBoard.name,
+        id: editBoard.id,
+      }),
+    });
+  }
 
-  function handleColumnNameChange(id, name) {}
+  async function handleColumnNameChange(id, name) {
+    fetch("/api/column", {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name,
+        id,
+      }),
+    });
+  }
 
-  function handleNewColumn(name) {}
+  async function handleNewColumn(name) {
+    fetch("/api/column", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name,
+        boardId: currentBoard.id,
+      }),
+    });
+  }
 
-  function handleDeleteColumn(id) {}
+  async function handleDeleteColumn(id) {
+    fetch("/api/column", {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        id,
+      }),
+    });
+  }
 
   return (
     <div className={styles.outerDiv}>
@@ -207,6 +250,27 @@ export default function EditBoard() {
                   index === i ? { ...column, name: e.target.value } : column
                 ),
               }));
+            }}
+          />
+        );
+      })}
+      {newColumns.map((column, i) => {
+        return (
+          <TextField
+            key={i}
+            value={column}
+            onChange={(e) => {
+              setNewColumns((prev) => {
+                return [
+                  ...prev.map((name, index) => {
+                    if (index === i) {
+                      return e.target.value;
+                    } else {
+                      return name;
+                    }
+                  }),
+                ];
+              });
             }}
           />
         );
