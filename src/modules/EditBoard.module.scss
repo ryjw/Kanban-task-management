@@ -2,9 +2,26 @@
 @use "@/partials/breakpoints" as *;
 
 .outerDiv {
+  background-color: white;
   border: black 1px solid;
   height: 400px;
   //   width: 200px;
   display: flex;
   flex-direction: column;
+}
+
+.columns {
+  overflow-x: scroll;
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 }
