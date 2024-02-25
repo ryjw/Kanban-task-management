@@ -9,7 +9,7 @@ import logoDesktop from "@/assets/logo-dark.svg";
 import Image from "next/image";
 import Modal from "./Modal";
 
-function Header() {
+function Header({ currentBoard }) {
   const [isChevronUp, setIsChevronUp] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -33,7 +33,7 @@ function Header() {
       </div>
       <div className={`${styles.headerRight} ${styles.flex}`}>
         <div className={`${styles.headerBoardName} ${styles.flex}`}>
-          <p>Platform Launch</p>
+          <p>{currentBoard.name}</p>
           <Image
             src={modalOpen ? iconChevronUp : iconChevronDown}
             alt="toggle"
