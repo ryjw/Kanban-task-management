@@ -240,89 +240,98 @@ export default function EditBoard() {
 
   return (
     <div className={styles.outerDiv}>
-      <label>Edit Board</label>
-      <label>Board Name</label>
-      <TextField
-        value={editBoard.name}
-        onChange={(e) =>
-          setEditBoard((prev) => ({ ...prev, name: e.target.value }))
-        }
-      />
-      <label>Board Columns</label>
-      <div className={styles.columns}>
-        {editBoard.columns.map((column, i) => {
-          return (
-            <div>
-              <TextField
-                key={column.id}
-                value={column.name}
-                onChange={(e) => {
-                  setEditBoard((prev) => ({
-                    ...prev,
-                    columns: prev.columns.map((column, index) =>
-                      index === i ? { ...column, name: e.target.value } : column
-                    ),
-                  }));
-                }}
-              />
-              <button
-                className={styles.button}
-                onClick={() => {
-                  setEditBoard((prev) => {
-                    const copy = prev.columns.slice();
-                    copy.splice(i, 1);
-                    return {
+      <div className={styles.innerDiv}>
+        <label className={styles.heading}>Edit Board</label>
+        <label className={styles.subheading}>Board Name</label>
+        <TextField
+          className={styles.boardName}
+          value={editBoard.name}
+          onChange={(e) =>
+            setEditBoard((prev) => ({ ...prev, name: e.target.value }))
+          }
+        />
+        <label className={styles.subheading}>Board Columns</label>
+        <div className={styles.columns}>
+          {editBoard.columns.map((column, i) => {
+            return (
+              <div className={styles.columnUnit}>
+                <TextField
+                  key={column.id}
+                  value={column.name}
+                  variant={"small"}
+                  onChange={(e) => {
+                    setEditBoard((prev) => ({
                       ...prev,
-                      columns: copy,
-                    };
-                  });
-                }}
-              >
-                <Image src={cross} />
-              </button>
-            </div>
-          );
-        })}
-        {newColumns.map((column, i) => {
-          return (
-            <div>
-              <TextField
-                key={i}
-                value={column}
-                onChange={(e) => {
-                  setNewColumns((prev) => {
-                    return [
-                      ...prev.map((name, index) => {
-                        if (index === i) {
-                          return e.target.value;
-                        } else {
-                          return name;
-                        }
-                      }),
-                    ];
-                  });
-                }}
-              />
-              <button
-                className={styles.button}
-                onClick={() => {
-                  setNewColumns((prev) => {
-                    const copy = prev.slice();
-                    copy.splice(i, 1);
-                    return [...copy];
-                  });
-                }}
-              >
-                <Image src={cross} />
-              </button>
-            </div>
-          );
-        })}
+                      columns: prev.columns.map((column, index) =>
+                        index === i
+                          ? { ...column, name: e.target.value }
+                          : column
+                      ),
+                    }));
+                  }}
+                />
+                <button
+                  className={styles.button}
+                  onClick={() => {
+                    setEditBoard((prev) => {
+                      const copy = prev.columns.slice();
+                      copy.splice(i, 1);
+                      return {
+                        ...prev,
+                        columns: copy,
+                      };
+                    });
+                  }}
+                >
+                  <Image src={cross} alt="delete icon" />
+                </button>
+              </div>
+            );
+          })}
+          {newColumns.map((column, i) => {
+            return (
+              <div className={styles.columnUnit}>
+                <TextField
+                  variant="small"
+                  key={i}
+                  value={column}
+                  onChange={(e) => {
+                    setNewColumns((prev) => {
+                      return [
+                        ...prev.map((name, index) => {
+                          if (index === i) {
+                            return e.target.value;
+                          } else {
+                            return name;
+                          }
+                        }),
+                      ];
+                    });
+                  }}
+                />
+                <button
+                  className={styles.button}
+                  onClick={() => {
+                    setNewColumns((prev) => {
+                      const copy = prev.slice();
+                      copy.splice(i, 1);
+                      return [...copy];
+                    });
+                  }}
+                >
+                  <Image src={cross} alt="delete icon" />
+                </button>
+              </div>
+            );
+          })}
+        </div>
       </div>
-      <Button onClick={addColumn} variant="secondary">
-        +Add New Column
-      </Button>
-      <Button onClick={handleSubmit}>Save Changes</Button>
+      <div className={styles.buttonContainer}>
+        <Button onClick={addColumn} variant="secondary">
+          +Add New Column
+        </Button>
+        <Button onClick={handleSubmit}>Save Changes</Button>
+      </div>
     </div>
   );
 }

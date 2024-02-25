@@ -1,9 +1,9 @@
 @use "@/partials/variables" as *;
 @use "@/partials/breakpoints" as *;
 
-.default {
+%default {
   @include body-l;
- height: 40px;
+  height: 40px;
   border-radius: 4px;
   border: 1px solid $medium-grey-25;
   box-sizing: border-box;
@@ -19,4 +19,13 @@
   &:invalid {
     border-color: $red-primary;
   }
+}
+
+.default {
+  @extend %default;
+}
+
+.small {
+  @extend %default;
+  width: 385px;
 }
