@@ -6,7 +6,7 @@ import LoginForm from "@/forms/LoginForm";
 import RegisterForm from "@/forms/RegisterForm";
 
 export default function Login() {
-  const [modalOpen, setModalOpen] = useState(true);
+  const [modalOpen, setModalOpen] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
 
   //toggle between login and register
