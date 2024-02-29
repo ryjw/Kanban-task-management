@@ -1,7 +1,7 @@
 @use "@/partials/variables" as *;
 @use "@/partials/breakpoints" as *;
 
-.default {
+%default {
   @include body-l;
   height: 40px;
   width: 100%;
@@ -20,4 +20,13 @@
   &:invalid {
     border-color: $red-primary;
   }
+}
+
+.default {
+  @extend %default;
+}
+
+.small {
+  @extend %default;
+  width: 385px;
 }

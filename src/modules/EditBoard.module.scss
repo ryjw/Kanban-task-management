@@ -1,0 +1,94 @@
+@use "@/partials/variables" as *;
+@use "@/partials/breakpoints" as *;
+
+.outerDiv {
+  background-color: white;
+  height: 473px;
+  width: 343px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: auto;
+}
+
+.innerDiv {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 24px 0px 24px;
+}
+
+.spaceBetween {
+  display: flex;
+  flex-direction: column;
+}
+
+.columns {
+  // overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.columnUnit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.boardName {
+  width: 295px;
+}
+
+.button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 295px;
+  margin: 32px 24px;
+}
+
+.heading {
+  @include heading-l;
+}
+
+.subheading {
+  @include heading-s;
+  color: $medium-grey;
+  margin: 8px 0;
+}
+
+@include lg {
+  .outerDiv {
+    height: 480px;
+    width: 481px;
+  }
+  .columnUnit,
+  .boardName,
+  .buttonContainer {
+    width: 416px;
+  }
+}
+
+@include md {
+  .outerDiv {
+    height: 480px;
+    width: 481px;
+  }
+  .columnUnit,
+  .boardName,
+  .buttonContainer {
+    width: 416px;
+  }
+}
