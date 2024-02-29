@@ -9,12 +9,14 @@
 .columnContainer {
   min-height: 750px;
   display: flex;
-  overflow-x: auto;
+  margin-top: 35px;
+  //   overflow-x: auto;
 }
 
 .column {
   width: 280px;
   overflow-y: auto;
+  flex-grow: 1;
 }
 
 .bigButton {
@@ -23,7 +25,7 @@
   align-items: center;
   background-color: #e9effa;
   flex-grow: 1;
-  margin-top: 55px;
+  margin-top: 20px;
   border-radius: 6px;
   width: 280px;
 }
