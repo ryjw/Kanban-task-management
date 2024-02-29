@@ -2,9 +2,19 @@
 @use "@/partials/breakpoints" as *;
 
 .outerDiv {
-  margin-top: 65px;
-  height: 100%;
+  padding-top: 65px;
+  height: 100vh;
+}
+
+.columnContainer {
+  min-height: 750px;
+  display: flex;
   overflow-x: auto;
+}
+
+.column {
+  width: 280px;
+  overflow-y: auto;
 }
 
 .bigButton {
@@ -12,19 +22,34 @@
   justify-content: center;
   align-items: center;
   background-color: #e9effa;
-  height: 814px;
+  flex-grow: 1;
   margin-top: 55px;
   border-radius: 6px;
   width: 280px;
 }
 
 .invisibleButton {
+  @include heading-xl;
   cursor: pointer;
   user-select: none;
+  background: none;
+  color: $medium-grey;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: inherit;
+
+  &:hover {
+    color: $purple-primary;
+  }
 }
 
 @include md {
   .outerDiv {
-    margin-top: 96px;
+    padding-top: 96px;
+    height: 100%;
+  }
+  .columnContainer {
+    min-height: 853px;
   }
 }
