@@ -1,0 +1,30 @@
+@use "@/partials/variables" as *;
+@use "@/partials/breakpoints" as *;
+
+.outerDiv {
+  margin-top: 65px;
+  height: 100%;
+  overflow-x: auto;
+}
+
+.bigButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e9effa;
+  height: 814px;
+  margin-top: 55px;
+  border-radius: 6px;
+  width: 280px;
+}
+
+.invisibleButton {
+  cursor: pointer;
+  user-select: none;
+}
+
+@include md {
+  .outerDiv {
+    margin-top: 96px;
+  }
+}

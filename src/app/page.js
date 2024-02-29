@@ -3,6 +3,7 @@
 import Header from "@/components/Header";
 import Sidebar from "@/components/Sidebar";
 import EmptyState from "@/modules/EmptyState";
+import Main from "@/modules/Main";
 import { useState, useEffect } from "react";
 
 export default function Home() {
@@ -36,7 +37,11 @@ export default function Home() {
           fetchBoards={fetchBoards}
         />
       </div>
-      {boards.length > 0 ? <></> : <EmptyState />}
+      {boards.length > 0 ? (
+        <Main currentBoard={currentBoard} />
+      ) : (
+        <EmptyState />
+      )}
     </>
   );
 }
