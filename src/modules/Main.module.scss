@@ -4,17 +4,19 @@
 .outerDiv {
   padding-top: 65px;
   height: 100vh;
+  width: fit-content;
+  overflow-x: scroll;
 }
 
 .columnContainer {
   min-height: 750px;
   display: flex;
   margin-top: 35px;
-  //   overflow-x: auto;
+  overflow-x: scroll;
 }
 
 .column {
-  width: 280px;
+  min-width: 280px;
   overflow-y: auto;
   flex-grow: 1;
 }
@@ -27,7 +29,7 @@
   flex-grow: 1;
   margin-top: 20px;
   border-radius: 6px;
-  width: 280px;
+  min-width: 280px;
 }
 
 .invisibleButton {
