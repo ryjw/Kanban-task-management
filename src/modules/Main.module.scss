@@ -11,7 +11,9 @@
 .columnContainer {
   min-height: 750px;
   display: flex;
+  gap: 20px;
   margin-top: 35px;
+  margin-left: 35px;
   overflow-x: scroll;
 }
 
@@ -19,6 +21,17 @@
   min-width: 280px;
   overflow-y: auto;
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.columnName {
+  @include heading-s;
+  letter-spacing: 2.4px;
+  color: $medium-grey;
+  margin-bottom: 15px;
+  user-select: none;
 }
 
 .bigButton {

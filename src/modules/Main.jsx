@@ -1,3 +1,4 @@
+import Card from "@/components/Card";
 import styles from "@/modules/Main.module.scss";
 
 export default function Main({ currentBoard }) {
@@ -11,7 +12,12 @@ export default function Main({ currentBoard }) {
             .map((column) => {
               return (
                 <div className={styles.column} key={column.id}>
-                  {`${column.name} (${column.tasks.length})`}
+                  <div
+                    className={styles.columnName}
+                  >{`${column.name} (${column.tasks.length})`}</div>
+                  {column.tasks.map((task) => (
+                    <Card task={task} />
+                  ))}
                 </div>
               );
             })}
