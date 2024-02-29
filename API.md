@@ -160,7 +160,7 @@ To create a new board
 
 ```js
 fetch("/api/board", {
-    method: "POST".
+    method: "POST",
       headers: {
     "Content-Type": "application/json",
   },
@@ -191,7 +191,7 @@ To change the name of the board
 
 ```js
 fetch("/api/board", {
-    method: "PATCH".
+    method: "PATCH",
       headers: {
     "Content-Type": "application/json",
   },
@@ -221,7 +221,7 @@ fetch("/api/board", {
 
 ```js
 fetch("/api/board", {
-    method: "DELETE".
+    method: "DELETE",
       headers: {
     "Content-Type": "application/json",
   },
@@ -250,7 +250,7 @@ fetch("/api/board", {
 
 ```js
 fetch("/api/column", {
-    method: "POST".
+    method: "POST",
       headers: {
     "Content-Type": "application/json",
   },
@@ -282,7 +282,7 @@ To change the name
 
 ```js
 fetch("/api/column", {
-    method: "PATCH".
+    method: "PATCH",
       headers: {
     "Content-Type": "application/json",
   },
@@ -312,7 +312,7 @@ fetch("/api/column", {
 
 ```js
 fetch("/api/column", {
-    method: "DELETE".
+    method: "DELETE",
       headers: {
     "Content-Type": "application/json",
   },
@@ -341,7 +341,7 @@ fetch("/api/column", {
 
 ```js
 fetch("/api/task", {
-    method: "POST".
+    method: "POST",
       headers: {
     "Content-Type": "application/json",
   },
@@ -375,7 +375,7 @@ To change either the name, description, or column, or all of these
 
 ```js
 fetch("/api/task", {
-    method: "PATCH".
+    method: "PATCH",
       headers: {
     "Content-Type": "application/json",
   },
@@ -408,7 +408,7 @@ fetch("/api/task", {
 
 ```js
 fetch("/api/task", {
-    method: "DELETE".
+    method: "DELETE",
       headers: {
     "Content-Type": "application/json",
   },
@@ -438,7 +438,7 @@ fetch("/api/task", {
 
 ```js
 fetch("/api/subtask", {
-    method: "POST".
+    method: "POST",
       headers: {
     "Content-Type": "application/json",
   },
@@ -472,7 +472,7 @@ To change either the name or the fulfiled status of the subtask, or both
 
 ```js
 fetch("/api/subtask", {
-    method: "PATCH".
+    method: "PATCH",
       headers: {
     "Content-Type": "application/json",
   },
@@ -504,7 +504,7 @@ fetch("/api/subtask", {
 
 ```js
 fetch("/api/subtask", {
-    method: "DELETE".
+    method: "DELETE",
       headers: {
     "Content-Type": "application/json",
   },
