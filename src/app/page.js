@@ -10,16 +10,19 @@ export default function Home() {
   const [currentBoard, setCurrentBoard] = useState({});
   async function fetchBoards() {
     const res = await fetch("/api/board");
-    if (res.success) {
-      setBoards(res.boards);
+    const data = await res.json();
+    if (data.success) {
+      setBoards(data.boards);
+      if (boards.length > 0) {
+        setCurrentBoard(data.boards[0]);
+      }
+    } else {
+      console.log(data);
     }
   }
 
   useEffect(() => {
     fetchBoards();
-    if (boards.length > 0) {
-      setCurrentBoard(boards[0]);
-    }
   }, []);
 
   return (
@@ -30,10 +33,10 @@ export default function Home() {
           boards={boards}
           currentBoard={currentBoard}
           setCurrentBoard={setCurrentBoard}
-          // fetchBoards={fetchBoards}
+          fetchBoards={fetchBoards}
         />
       </div>
-      <EmptyState />
+      {boards.length > 0 ? <></> : <EmptyState />}
     </>
   );
 }

@@ -15,7 +15,7 @@ export async function GET(req) {
         columns: { include: { tasks: { include: { subtasks: true } } } },
       },
     });
-    return Response.json({ boards });
+    return Response.json({ success: true, boards });
   } catch (error) {
     return Response.json({ success: false, error: error.message });
   }

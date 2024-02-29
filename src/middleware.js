@@ -6,11 +6,14 @@ export async function middleware(req) {
     const response = NextResponse.next();
     const hasAuth = req.cookies.has("auth");
     if (!hasAuth) {
-      return response;
+      return NextResponse.redirect(new URL("/login", req.url));
     }
     const authCookie = req.cookies.get("auth");
     const secret = new TextEncoder().encode(process.env.SECRET);
     const { payload } = await jwtVerify(authCookie.value, secret);
+    if (!payload) {
+      return NextResponse.redirect(new URL("/login", req.url));
+    }
     response.headers.set("userId", payload.id);
     return response;
   } catch (error) {
@@ -20,5 +23,5 @@ export async function middleware(req) {
 
 // middleware triggers for every route except user and image routes
 export const config = {
-  matcher: ["/((?!api/user|_next/static|_next/image|favicon.ico).*)"],
+  matcher: ["/((?!api/user|login|_next/static|_next/image|favicon.ico).*)"],
 };
