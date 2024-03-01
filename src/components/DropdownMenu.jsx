@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "@/partials/_dropdownmenu.module.scss";
+import styles from "./Dropdownmenu.module.scss";
 import { useState } from "react";
 import { FaEllipsisVertical } from "react-icons/fa6";
 

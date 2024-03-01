@@ -1,0 +1,49 @@
+@use "@/partials/variables" as *;
+@use "@/partials/breakpoints" as *;
+
+.mainContainer {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  border: 2px solid black;
+  width: 343px;
+  height: 659px;
+  @include lg {
+    width: 480px;
+    height: 675px;
+  }
+}
+
+.mainTitle {
+  @include heading-l;
+  margin: 30px 30px;
+  font-weight: 700;
+}
+
+.sections {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 25px;
+  gap: 10px;
+}
+
+.subTitle {
+  @include heading-s;
+  color: $medium-grey;
+  margin-bottom: 5px;
+}
+
+.subtasks {
+  display: flex;
+  gap: 10px;
+  font-weight: 700;
+}
+
+.xBtn {
+  border: none;
+  background-color: $light-grey;
+  color: $medium-grey;
+  font-size: 24px;
+  cursor: pointer;
+}

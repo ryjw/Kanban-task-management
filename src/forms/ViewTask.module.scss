@@ -1,0 +1,40 @@
+@use "@/partials/variables" as *;
+@use "@/partials/breakpoints" as *;
+
+.mainContainer {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  border: 2px solid black;
+  width: 343px;
+  height: 659px;
+  padding: 20px 20px 0px;
+  background-color: #ffffff;
+  @include lg {
+    width: 480px;
+    height: 523px;
+  }
+}
+
+.mainTitle {
+  font-size: 22px;
+  margin-bottom: 30px;
+  display: flex;
+  width: 675px;
+}
+
+.description {
+  color: $medium-grey;
+}
+
+.subTitle {
+  margin: 30px 0 10px 0;
+  font-weight: 600;
+  color: $medium-grey;
+  font-size: 14px;
+}
+
+.sectionOne {
+  display: flex;
+}

@@ -1,4 +1,4 @@
-import styles from "@/partials/_addTask.module.scss";
+import styles from "./AddTask.module.scss";
 import TextField from "@/components/TextField";
 import Select from "@/components/Select";
 import Button from "@/components/Button";
@@ -23,20 +23,17 @@ export default function AddTask() {
       <div className={styles.sections}>
         <label className={styles.subTitle}>Subtasks</label>
         <div className={styles.subtasks}>
-          <TextField
-            variant="default"
-            placeholder="e.g. Drink coffee & smile"
-          />
+          <TextField variant="alt" placeholder="e.g. Drink coffee & smile" />
           <button className={styles.xBtn}>
             <IoCloseSharp />
           </button>
         </div>
-        <Button variant="secondary"> + Add New Subtask</Button>
+        <Button variant="secondary" content="+Add New Subtask" />
       </div>
       <div className={styles.sections}>
         <label className={styles.subTitle}>Status</label>
         <Select />
-        <Button variant="default">Create Task</Button>
+        <Button variant="default" content="Create Task" />
       </div>
     </form>
   );

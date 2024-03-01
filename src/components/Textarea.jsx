@@ -1,4 +1,4 @@
-import styles from "../partials/_textarea.module.scss";
+import styles from "./Textarea.module.scss";
 
 export default function Textarea({ placeholder, onChange }) {
   return (

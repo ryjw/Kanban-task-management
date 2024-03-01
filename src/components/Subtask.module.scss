@@ -1,0 +1,27 @@
+@use "@/partials/variables" as *;
+
+.sections {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 25px;
+}
+
+.subTitle {
+  @include heading-s;
+  color: $medium-grey;
+  margin-bottom: 5px;
+}
+
+.subtasks {
+  display: flex;
+  gap: 10px;
+}
+
+.xBtn {
+  border: none;
+  background-color: $white;
+  color: $medium-grey;
+  font-size: 24px;
+  cursor: pointer;
+  margin-top: -10px;
+}
