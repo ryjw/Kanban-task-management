@@ -26,7 +26,7 @@ export default function Sidebar({
             ALL BOARDS {`(${boards.length})`}
           </h2>
           {boards.map((board) => {
-            if (board.id === currentBoard.id) {
+            if (board.id === currentBoard?.id) {
               return (
                 <li key={board.id} className={styles.listSelected}>
                   <Image

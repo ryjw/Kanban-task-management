@@ -20,7 +20,7 @@ export default function Home() {
   }
   function refreshCurrentBoard() {
     const filtered = boards.filter((board) => board.id === currentBoardId);
-    if (filtered) {
+    if (filtered.length > 0) {
       setCurrentBoard(filtered[0]);
     }
   }
