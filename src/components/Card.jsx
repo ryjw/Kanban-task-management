@@ -11,7 +11,7 @@ export default function Card({ task }) {
                 task.subtasks.filter((subtask) => subtask.isFulfilled === true)
                   .length
               } of ${task.subtasks.length} subtasks`
-            : ` `}
+            : ``}
         </h4>
       </div>
     </div>

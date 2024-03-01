@@ -9,22 +9,29 @@ import { useState, useEffect } from "react";
 export default function Home() {
   const [boards, setBoards] = useState([]);
   const [currentBoard, setCurrentBoard] = useState({});
+  const [currentBoardId, setCurrentBoardId] = useState("");
+
   async function fetchBoards() {
     const res = await fetch("/api/board");
     const data = await res.json();
     if (data.success) {
       setBoards(data.boards);
-      if (boards.length > 0) {
-        setCurrentBoard(data.boards[0]);
-      }
-    } else {
-      console.log(data);
+    }
+  }
+  function refreshCurrentBoard() {
+    const filtered = boards.filter((board) => board.id === currentBoardId);
+    if (filtered) {
+      setCurrentBoard(filtered[0]);
     }
   }
 
   useEffect(() => {
     fetchBoards();
   }, []);
+
+  useEffect(() => {
+    refreshCurrentBoard();
+  }, [boards]);
 
   return (
     <>
@@ -34,11 +41,12 @@ export default function Home() {
           boards={boards}
           currentBoard={currentBoard}
           setCurrentBoard={setCurrentBoard}
+          setCurrentBoardId={setCurrentBoardId}
           fetchBoards={fetchBoards}
         />
       </div>
       {boards.length > 0 ? (
-        <Main currentBoard={currentBoard} />
+        <Main currentBoard={currentBoard} fetchBoards={fetchBoards} />
       ) : (
         <EmptyState />
       )}
