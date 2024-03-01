@@ -31,6 +31,7 @@ export default function Home() {
 
   useEffect(() => {
     refreshCurrentBoard();
+    console.log("refreshing");
   }, [boards]);
 
   return (

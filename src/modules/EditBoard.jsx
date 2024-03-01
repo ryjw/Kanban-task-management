@@ -25,7 +25,7 @@ export default function EditBoard({ currentBoard, fetchBoards, setModalOpen }) {
         currentBoard.columns.filter((col) => col.id === column.id)[0].name !==
         column.name
       ) {
-        handleBoardNameChange(column.id, column.name);
+        handleColumnNameChange(column.id, column.name);
       }
     });
     currentBoard.columns.map((column) => {
@@ -35,8 +35,10 @@ export default function EditBoard({ currentBoard, fetchBoards, setModalOpen }) {
         handleDeleteColumn(column.id);
       }
     });
-    fetchBoards();
-    setModalOpen(false);
+    setTimeout(() => {
+      fetchBoards();
+      setModalOpen(false);
+    }, 400);
   }
 
   async function handleBoardNameChange() {
