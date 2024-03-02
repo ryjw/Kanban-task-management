@@ -1,6 +1,6 @@
 import Button from "@/components/Button";
 import TextField from "@/components/TextField";
-import styles from "@/modules/EditBoard.module.scss";
+import styles from "./EditBoard.module.scss";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import cross from "@/assets/icon-cross.svg";
@@ -110,9 +110,8 @@ export default function EditBoard({ currentBoard, fetchBoards, setModalOpen }) {
         <div className={styles.columns}>
           {editBoard.columns.map((column, i) => {
             return (
-              <div className={styles.columnUnit}>
+              <div className={styles.columnUnit} key={column.id}>
                 <TextField
-                  key={column.id}
                   value={column.name}
                   variant={"small"}
                   onChange={(e) => {
@@ -146,7 +145,7 @@ export default function EditBoard({ currentBoard, fetchBoards, setModalOpen }) {
           })}
           {newColumns.map((column, i) => {
             return (
-              <div className={styles.columnUnit}>
+              <div className={styles.columnUnit} key={column.id}>
                 <TextField
                   variant="small"
                   key={i}

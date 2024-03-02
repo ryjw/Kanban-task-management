@@ -2,12 +2,8 @@
 
 import Header from "@/components/Header";
 import Sidebar from "@/components/Sidebar";
-<<<<<<< HEAD
-import EmptyState from "@/modules/EmptyState";
-import Main from "@/modules/Main";
-=======
 import EmptyState from "@/layouts/EmptyState";
->>>>>>> main
+import Main from "@/layouts/Main";
 import { useState, useEffect } from "react";
 
 export default function Home() {
