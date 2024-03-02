@@ -1,7 +1,7 @@
 import Card from "@/components/Card";
 import Modal from "@/components/Modal";
-import styles from "@/modules/Main.module.scss";
-import EditBoard from "./EditBoard";
+import styles from "./Main.module.scss";
+import EditBoard from "@/forms/EditBoard";
 import { useState } from "react";
 
 export default function Main({ currentBoard, fetchBoards }) {

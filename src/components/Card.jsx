@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import styles from "@/components/Card.module.scss";
-=======
 import styles from "./Card.module.scss";
->>>>>>> main
 
 export default function Card({ task }) {
   return (
