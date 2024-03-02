@@ -1,8 +1,8 @@
-import styles from '@/partials/_button.module.scss';
+import styles from "./Button.module.scss";
 
 export default function Button({
-  variant = 'default',
-  size = 'sm',
+  variant = "default",
+  size = "sm",
   onClick,
   children,
 }) {

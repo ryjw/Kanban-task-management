@@ -1,4 +1,4 @@
-import styles from "@/partials/_card.module.scss";
+import styles from "./Card.module.scss";
 
 export default function Card() {
   return (

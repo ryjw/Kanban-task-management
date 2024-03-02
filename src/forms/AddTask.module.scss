@@ -1,5 +1,5 @@
-@use "./variables" as *;
-@use "./breakpoints" as *;
+@use "@/partials/variables" as *;
+@use "@/partials/breakpoints" as *;
 
 .mainDiv {
   margin-top: 20px;

@@ -1,4 +1,4 @@
-import styles from "@/partials/_textfield.module.scss";
+import styles from "./Textfield.module.scss";
 
 export default function TextField({
   variant = "default",
