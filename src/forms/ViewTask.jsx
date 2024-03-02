@@ -1,4 +1,5 @@
-import styles from "@/partials/_viewTask.module.scss";
+import styles from "./ViewTask.module.scss";
+
 import Checkbox from "@/components/Checkbox";
 import Select from "@/components/Select";
 import DropdownMenu from "@/components/DropdownMenu";

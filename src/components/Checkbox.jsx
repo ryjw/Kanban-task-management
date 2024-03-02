@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import styles from "@/partials/_checkbox.module.scss";
+import styles from "./Checkbox.module.scss";
 
 export default function Checkbox({ children }) {
   const [isChecked, setIsChecked] = useState(false);

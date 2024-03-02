@@ -1,4 +1,4 @@
-import styles from "@/partials/_subtask.module.scss";
+import styles from "./Subtask.module.scss";
 import TextField from "./TextField";
 import Button from "./Button";
 import { IoCloseSharp } from "react-icons/io5";

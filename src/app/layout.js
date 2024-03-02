@@ -7,6 +7,9 @@ const plus_jakarta_sans = Plus_Jakarta_Sans({ subsets: ["latin"] });
 export const metadata = {
   title: "Kanban Task Manager",
   description: "Your first stop for organisation!",
+  icons: {
+    icon: "/icon.png",
+  },
 };
 
 export default function RootLayout({ children }) {
