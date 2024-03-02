@@ -33,7 +33,7 @@ function Header({ currentBoard }) {
       </div>
       <div className={`${styles.headerRight} ${styles.flex}`}>
         <div className={`${styles.headerBoardName} ${styles.flex}`}>
-          <p>{currentBoard?.name}</p>
+          <p>{currentBoard.name}</p>
           <Image
             src={modalOpen ? iconChevronUp : iconChevronDown}
             alt="toggle"

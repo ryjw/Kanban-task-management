@@ -6,12 +6,7 @@ import iconHideSidebar from "@/assets/icon-hide-sidebar.svg";
 import iconShowSidebar from "@/assets/icon-show-sidebar.svg";
 import Image from "next/image";
 
-export default function Sidebar({
-  boards,
-  currentBoard,
-  setCurrentBoard,
-  setCurrentBoardId,
-}) {
+export default function Sidebar({ boards, currentBoard, setCurrentBoard }) {
   const [sidebarVisible, setSidebarVisible] = useState(true);
 
   return (
@@ -26,7 +21,7 @@ export default function Sidebar({
             ALL BOARDS {`(${boards.length})`}
           </h2>
           {boards.map((board) => {
-            if (board.id === currentBoard?.id) {
+            if (board.id === currentBoard.id) {
               return (
                 <li key={board.id} className={styles.listSelected}>
                   <Image
@@ -43,7 +38,6 @@ export default function Sidebar({
                   key={board.id}
                   onClick={() => {
                     setCurrentBoard(board);
-                    setCurrentBoardId(board.id);
                   }}
                   className={styles.boardList}
                 >
