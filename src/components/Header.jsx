@@ -47,18 +47,26 @@ function Header({ currentBoard }) {
           />
         </div>
         <div className={`${styles.headerSettings} ${styles.flex}`}>
-          <div className={styles.btnMobile}>
-            <Button onClick={() => setTaskModalOpen(!taskModalOpen)}>+</Button>
-          </div>
-          <div className={styles.btnDesktop}>
-            <Button onClick={() => setTaskModalOpen(!taskModalOpen)}>
-              + Add New Task
-            </Button>
-          </div>
-          <DropdownMenu
-            options={["Edit Board", "Delete Board"]}
-            variant="header"
-          />
+          {!!Object.keys(currentBoard).length && (
+            <div className={styles.btnMobile}>
+              <Button onClick={() => setTaskModalOpen(!taskModalOpen)}>
+                +
+              </Button>
+            </div>
+          )}
+          {!!Object.keys(currentBoard).length && (
+            <>
+              <div className={styles.btnDesktop}>
+                <Button onClick={() => setTaskModalOpen(!taskModalOpen)}>
+                  + Add New Task
+                </Button>
+              </div>
+              <DropdownMenu
+                options={["Edit Board", "Delete Board"]}
+                variant="header"
+              />
+            </>
+          )}
         </div>
       </div>
       {/* TODO: create modal lol */}

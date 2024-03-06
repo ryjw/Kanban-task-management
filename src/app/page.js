@@ -22,6 +22,8 @@ export default function Home() {
     const filtered = boards.filter((board) => board.id === currentBoardId);
     if (filtered.length > 0) {
       setCurrentBoard(filtered[0]);
+    } else if (boards.length > 0) {
+      setCurrentBoard(boards[0]);
     }
   }
 
@@ -31,7 +33,6 @@ export default function Home() {
 
   useEffect(() => {
     refreshCurrentBoard();
-    console.log("refreshing");
   }, [boards]);
 
   return (

@@ -15,6 +15,8 @@ export default function AddTask({ currentBoard }) {
 
   return (
     <div className={styles.mainDiv}>
+      {console.log(currentBoard)}
+
       <label className={styles.mainTitle}> Add New Task</label>
       <div className={styles.sections}>
         <label className={styles.subTitle}>Title</label>

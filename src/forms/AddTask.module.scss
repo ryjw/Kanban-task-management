@@ -8,6 +8,7 @@
   border-radius: 10px;
   width: 343px;
   height: 659px;
+  overflow-y: scroll;
   @include lg {
     width: 480px;
     height: 675px;
