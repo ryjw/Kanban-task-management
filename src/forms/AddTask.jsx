@@ -3,11 +3,18 @@ import TextField from "@/components/TextField";
 import Select from "@/components/Select";
 import Button from "@/components/Button";
 import Textarea from "@/components/Textarea";
-import { IoCloseSharp } from "react-icons/io5";
+import CrossIcon from "@/assets/icon-cross.svg";
+import Image from "next/image";
+import { useState } from "react";
 
-export default function AddTask() {
+export default function AddTask({ currentBoard }) {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [subtasks, setSubtasks] = useState([]);
+  const [columnId, setColumnId] = useState("");
+
   return (
-    <form className={styles.mainDiv}>
+    <div className={styles.mainDiv}>
       <label className={styles.mainTitle}> Add New Task</label>
       <div className={styles.sections}>
         <label className={styles.subTitle}>Title</label>
@@ -23,18 +30,21 @@ export default function AddTask() {
       <div className={styles.sections}>
         <label className={styles.subTitle}>Subtasks</label>
         <div className={styles.subtasks}>
-          <TextField variant="alt" placeholder="e.g. Drink coffee & smile" />
+          <TextField
+            variant="default"
+            placeholder="e.g. Drink coffee & smile"
+          />
           <button className={styles.xBtn}>
-            <IoCloseSharp />
+            <Image src={CrossIcon} alt="cancel icon" />
           </button>
         </div>
-        <Button variant="secondary" content="+Add New Subtask" />
+        <Button variant="secondary">+ Add New Subtask</Button>
       </div>
       <div className={styles.sections}>
         <label className={styles.subTitle}>Status</label>
         <Select />
-        <Button variant="default" content="Create Task" />
+        <Button variant="default">Create task</Button>
       </div>
-    </form>
+    </div>
   );
 }

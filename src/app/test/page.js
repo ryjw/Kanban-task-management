@@ -4,15 +4,10 @@ import Modal from "@/components/Modal";
 import Button from "@/components/Button";
 import LoginForm from "@/forms/LoginForm";
 import RegisterForm from "@/forms/RegisterForm";
+import AddTask from "@/forms/AddTask";
 
 export default function Test() {
   const [modalOpen, setModalOpen] = useState(false);
-  const [showLogin, setShowLogin] = useState(true);
-
-  //toggle between login and register
-  const toggleForm = () => {
-    setShowLogin((prev) => !prev);
-  };
 
   return (
     <>
@@ -23,11 +18,7 @@ export default function Test() {
       </div>
       {modalOpen && (
         <Modal open={modalOpen} setOpen={setModalOpen}>
-          {showLogin ? (
-            <LoginForm onToggle={toggleForm} />
-          ) : (
-            <RegisterForm onToggle={toggleForm} />
-          )}
+          {<AddTask />}
         </Modal>
       )}
     </>

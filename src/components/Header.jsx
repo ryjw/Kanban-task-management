@@ -8,10 +8,12 @@ import iconChevronUp from "@/assets/icon-chevron-up.svg";
 import logoDesktop from "@/assets/logo-dark.svg";
 import Image from "next/image";
 import Modal from "./Modal";
+import AddTask from "@/forms/AddTask";
 
 function Header({ currentBoard }) {
   const [isChevronUp, setIsChevronUp] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
+  const [taskModalOpen, setTaskModalOpen] = useState(false);
 
   const toggleChevron = () => {
     setIsChevronUp((prev) => !prev);
@@ -46,10 +48,12 @@ function Header({ currentBoard }) {
         </div>
         <div className={`${styles.headerSettings} ${styles.flex}`}>
           <div className={styles.btnMobile}>
-            <Button>+</Button>
+            <Button onClick={() => setTaskModalOpen(!taskModalOpen)}>+</Button>
           </div>
           <div className={styles.btnDesktop}>
-            <Button>+ Add New Task</Button>
+            <Button onClick={() => setTaskModalOpen(!taskModalOpen)}>
+              + Add New Task
+            </Button>
           </div>
           <DropdownMenu
             options={["Edit Board", "Delete Board"]}
@@ -62,6 +66,9 @@ function Header({ currentBoard }) {
         <form action="">
           <h1>Create me! (ʘ‿ʘ✿)</h1>
         </form>
+      </Modal>
+      <Modal open={taskModalOpen} setOpen={setTaskModalOpen}>
+        <AddTask currentBoard={currentBoard} />
       </Modal>
     </header>
   );
